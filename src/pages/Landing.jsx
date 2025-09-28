@@ -8,15 +8,17 @@ import ContactSection from "../component/ContactSection";
 import Footer from "../component/Footer";
 import TestimonialMarquee from "../component/Testimonial";
 import AboutSection from "../component/AboutSection";
+import MidPageCta from "../component/MidPageCta";
 const Landing = () => {
   return (
     <Box>
-      <Box>
+      <Box boxSizing={"border-box"} overflow={"hidden"}>
         <NavBar />
         <Carousel />
         <AboutSection />
-        {/* <CallToAction /> */}
+        <CallToAction />
         <ServicesSection />
+        <MidPageCta />
         <TestimonialMarquee />
         <MidPage />
         {/* <ContactSection /> */}

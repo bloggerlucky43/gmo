@@ -11,6 +11,7 @@ export default function MidPage() {
       bgPosition="center"
       position="relative"
       overflow="hidden"
+      data-aos="slide-up"
     >
       {/* Blue overlay */}
       <Box
@@ -21,7 +22,6 @@ export default function MidPage() {
         h="100%"
         bg="primary.700"
         opacity={0.9}
-        // bg="rgba(0, 37, 64, 0.7)"
       />
 
       <Flex
@@ -39,6 +39,7 @@ export default function MidPage() {
             direction="column"
             px={6}
             py={4}
+            data-aos="fade-up"
             borderLeft="solid 2px"
             borderColor="orange.500"
           >
@@ -64,6 +65,7 @@ export default function MidPage() {
             direction="column"
             px={6}
             py={4}
+            data-aos="fade-up"
             borderLeft="solid 2px"
             borderColor="orange.500"
           >
@@ -89,6 +91,7 @@ export default function MidPage() {
             direction="column"
             px={6}
             py={4}
+            data-aos="fade-up"
             borderLeft="solid 2px"
             borderColor="orange.500"
           >
@@ -114,6 +117,7 @@ export default function MidPage() {
             direction="column"
             px={6}
             py={4}
+            data-aos="fade-up"
             borderLeft="solid 2px"
             borderColor="orange.500"
           >

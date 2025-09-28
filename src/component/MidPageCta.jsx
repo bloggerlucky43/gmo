@@ -1,10 +1,10 @@
 import { Box, Flex, Text, Button } from "@chakra-ui/react";
 import bgImage from "../assets/eng.jpg";
 
-export default function CallToAction() {
+export default function MidPageCta() {
   return (
     <Box
-      data-aos="slide-up"
+      data-aos="fade"
       w="100%"
       h={{ base: "250px", md: "300px" }}
       bgImage={`url(${bgImage})`}
@@ -13,9 +13,7 @@ export default function CallToAction() {
       position="relative"
       overflow="hidden"
     >
-      {/* Blue overlay */}
       <Box
-        data-aos="slide-up"
         position="absolute"
         top="0"
         left="0"
@@ -23,12 +21,10 @@ export default function CallToAction() {
         h="100%"
         bg="primary.700"
         opacity={0.9}
-        // bg="rgba(0, 37, 64, 0.7)"
       />
 
       {/* Content */}
       <Flex
-        data-aos="slide-up"
         position="relative"
         zIndex={1}
         w="100%"
@@ -45,18 +41,17 @@ export default function CallToAction() {
           color="white"
           mb={4}
         >
-          Don’t Let Downtime Slow You Down
+          Your Operations, Our Expertise
         </Text>
         <Text
           fontSize={{ base: "sm", md: "md", lg: "lg" }}
           color="white"
           mb={6}
         >
-          Our team is ready to provide fast, skilled labour and equipment when
-          you need it most.
+          From installations to maintenance, partner with us for reliable
+          industrial solutions that keep your business moving.
         </Text>
         <Button
-          data-aos="slide-up"
           size="lg"
           bg="orange.400"
           color="white"

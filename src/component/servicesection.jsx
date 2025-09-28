@@ -11,6 +11,7 @@ import building from "../assets/building.jpg";
 export default function ServicesSection() {
   return (
     <Flex
+      data-aos="fade"
       w={{ base: "90%", md: "85%", lg: "70%" }}
       cursor="pointer"
       mt={{ base: "8vh", md: "10vh" }}
@@ -18,7 +19,7 @@ export default function ServicesSection() {
       direction="column"
       justifySelf={"center"}
     >
-      <Flex direction="column">
+      <Flex direction="column" data-aos="fade-up">
         <Text
           color="primary.500"
           fontWeight={"bold"}
@@ -31,6 +32,7 @@ export default function ServicesSection() {
         </Text>
       </Flex>
       <SimpleGrid
+        data-aos="fade-up"
         columns={{ base: 1, md: 2, lg: 3 }}
         mt={{ base: "5", md: "10" }}
       >
@@ -40,6 +42,7 @@ export default function ServicesSection() {
           desc="Expert electrical and mechanical installation services for factories, plants, and heavy-duty industrial facilities"
         />
         <ServiceCard
+          data-aos="fade-up"
           src={num2}
           title="Workforce Resourcing & Outsourcing"
           desc="Flexible and efficient manpower solutions tailored to meet your industrial project needs."
@@ -55,6 +58,7 @@ export default function ServicesSection() {
           desc="Affordable rental of machinery, tools, and industrial equipment to keep your projects moving."
         />
         <ServiceCard
+          data-aos="fade-up"
           src={clothing}
           title="Professional Industrial Cleaning"
           desc="Comprehensive cleaning services for factories, warehouses, and plants to ensure a safe and productive environment."

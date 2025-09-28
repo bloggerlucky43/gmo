@@ -28,7 +28,7 @@ const slides = [
 
 export default function Carousel() {
   return (
-    <Box mt="8vh">
+    <Box mt="8vh" data-aos="fade-up" data-aos-duration="3000">
       <Swiper
         modules={[Pagination, Autoplay]}
         pagination={{ clickable: true }}

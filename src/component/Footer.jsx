@@ -21,7 +21,7 @@ export default function () {
         justifySelf="center"
         justify={"space-between"}
         borderRadius={{ md: "lg" }}
-        transform={{ base: "translateY(-180px)", md: "translateY(-70px)" }}
+        transform={{ base: "translateY(-180px)", md: "translateY(-80px)" }}
         direction={{ base: "column", lg: "row" }}
       >
         <Flex
@@ -29,6 +29,7 @@ export default function () {
           w={{ base: "full", md: "30%" }}
           align="center"
           mb={4}
+          data-aos="fade-up"
           gap={2}
         >
           <Icon
@@ -54,6 +55,7 @@ export default function () {
           align="center"
           mb={4}
           gap={2}
+          data-aos="fade-up"
         >
           <Icon
             as={FaPhone}
@@ -76,6 +78,7 @@ export default function () {
           align="center"
           mb={4}
           gap={2}
+          data-aos="fade-up"
         >
           <Icon
             as={FaEnvelope}
@@ -93,17 +96,23 @@ export default function () {
 
       {/* footer details */}
       <Flex
+        data-aos="fade-up"
         direction={{ base: "column", md: "row" }}
         justifySelf="center"
         color="whiteAlpha.900"
         w={{ base: "90%", md: "70%" }}
       >
         <Flex
+          data-aos="fade-up"
           mb={{ md: "10vh" }}
           direction={{ base: "column", md: "row" }}
           justify="space-between"
         >
-          <Flex w={{ base: "full", md: "30%" }} direction="column">
+          <Flex
+            data-aos="fade-up"
+            w={{ base: "full", md: "30%" }}
+            direction="column"
+          >
             <Text>
               GMO is a trusted service provider specializing in industrial
               electrical and mechanical installations, resourcing and
@@ -112,7 +121,7 @@ export default function () {
               management for mining areas, water sanitation, and landscaping —
               ensuring efficiency, safety, and sustainability for every project.
             </Text>
-            <Flex gap={4} mt={4}>
+            <Flex data-aos="fade-up" gap={4} mt={4}>
               <Icon
                 as={FaFacebook}
                 color="primary.900"

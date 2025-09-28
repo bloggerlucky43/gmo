@@ -30,8 +30,9 @@ const testimonials = [
 
 export default function TestimonialMarquee() {
   return (
-    <Box w="100%" py={10} bg="gray.50" mt="5vh">
+    <Box data-aos="slide-left" w="100%" py={10} bg="gray.50" mt="5vh">
       <Flex
+        data-aos="fade-up"
         direction="column"
         w={{ base: "90%", md: "85%", lg: "70%" }}
         mt={{ base: "6vh", md: "8vh", lg: "10vh" }}

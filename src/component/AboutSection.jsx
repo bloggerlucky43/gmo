@@ -15,7 +15,7 @@ export default function AboutSection() {
         gap={10}
       >
         {/* Left Image */}
-        <Box flex="1">
+        <Box flex="1" data-aos="slide-up">
           <Image
             src={industryImage}
             alt="Industrial Services"
@@ -28,7 +28,7 @@ export default function AboutSection() {
         </Box>
 
         {/* Right Content */}
-        <Box flex="1">
+        <Box flex="1" data-aos="slide-up">
           <Heading
             fontSize={{ base: "2xl", md: "4xl" }}
             color="primary.500"

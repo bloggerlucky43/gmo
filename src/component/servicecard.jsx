@@ -11,6 +11,7 @@ export default function ServiceCard({ src, title, desc }) {
   };
   return (
     <Box
+      data-aos="fade-up"
       position="relative"
       w={{ base: "100%", md: "300px" }}
       h="250px"
