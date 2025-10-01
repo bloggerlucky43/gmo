@@ -4,11 +4,13 @@ import { useEffect } from "react";
 import Landing from "./pages/Landing";
 import "aos/dist/aos.css";
 import AOS from "aos";
+import Contact from "./pages/Contact";
+import ServicePage from "./pages/ServicePage";
 function App() {
   useEffect(() => {
     AOS.init({
-      delay: 400,
-      duration: 2000,
+      delay: 250,
+      duration: 2500,
       easing: "ease-in-out",
       once: false,
     });
@@ -16,6 +18,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Landing />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/services" element={<ServicePage />} />
     </Routes>
   );
 }

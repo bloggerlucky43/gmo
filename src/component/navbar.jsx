@@ -10,12 +10,12 @@ import gmologo from "../assets/gmologo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { useNavigate } from "react-router-dom";
 const MotionFlex = motion.create(Flex);
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isMobile = useBreakpointValue({ base: true, md: false });
-
+  const navigate = useNavigate();
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -71,16 +71,46 @@ export default function NavBar() {
         display={{ base: "none", md: "flex" }}
         fontWeight={"bold"}
       >
-        {["HOME", "ABOUT US", "SERVICES", "CONTACT", "PAGES"].map((item) => (
-          <Text
-            key={item}
-            color="gray.700"
-            fontWeight={"bold"}
-            _hover={{ color: "primary.500" }}
-          >
-            {item}
-          </Text>
-        ))}
+        <Text
+          color="gray.700"
+          fontWeight={"bold"}
+          _hover={{ color: "primary.500" }}
+          onClick={() => navigate("/")}
+        >
+          HOME
+        </Text>
+        <Text
+          color="gray.700"
+          fontWeight={"bold"}
+          _hover={{ color: "primary.500" }}
+          onClick={() => navigate("/about")}
+        >
+          ABOUT US
+        </Text>
+        <Text
+          color="gray.700"
+          fontWeight={"bold"}
+          _hover={{ color: "primary.500" }}
+          onClick={() => navigate("/services")}
+        >
+          SERVICES
+        </Text>
+        <Text
+          color="gray.700"
+          fontWeight={"bold"}
+          _hover={{ color: "primary.500" }}
+          onClick={() => navigate("/services")}
+        >
+          PAGES
+        </Text>
+        <Text
+          color="gray.700"
+          fontWeight={"bold"}
+          _hover={{ color: "primary.500" }}
+          onClick={() => navigate("/contact")}
+        >
+          CONTACT
+        </Text>
       </Flex>
 
       <AnimatePresence>
@@ -105,19 +135,51 @@ export default function NavBar() {
               exit={{ y: "-100%", opacity: 0 }}
               transition={{ duration: 1.0, ease: "easeInOut" }}
             >
-              {["HOME", "ABOUT US", "SERVICES", "CONTACT", "PAGES"].map(
-                (item) => (
-                  <Text
-                    key={item}
-                    color="gray.700"
-                    fontWeight={"bold"}
-                    mt={4}
-                    _hover={{ color: "primary.500" }}
-                  >
-                    {item}
-                  </Text>
-                )
-              )}
+              <Text
+                color="gray.700"
+                fontWeight={"bold"}
+                mt={4}
+                _hover={{ color: "primary.500" }}
+                onClick={() => navigate("/")}
+              >
+                HOME
+              </Text>
+              <Text
+                color="gray.700"
+                fontWeight={"bold"}
+                mt={4}
+                _hover={{ color: "primary.500" }}
+                onClick={() => navigate("/about")}
+              >
+                ABOUT US
+              </Text>
+              <Text
+                color="gray.700"
+                fontWeight={"bold"}
+                mt={4}
+                _hover={{ color: "primary.500" }}
+                onClick={() => navigate("/services")}
+              >
+                SERVICES
+              </Text>
+              <Text
+                color="gray.700"
+                fontWeight={"bold"}
+                mt={4}
+                _hover={{ color: "primary.500" }}
+                onClick={() => navigate("/services")}
+              >
+                PAGES
+              </Text>
+              <Text
+                color="gray.700"
+                fontWeight={"bold"}
+                mt={4}
+                _hover={{ color: "primary.500" }}
+                onClick={() => navigate("/contact")}
+              >
+                CONTACT
+              </Text>
             </Flex>
           </MotionFlex>
         )}

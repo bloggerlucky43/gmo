@@ -9,17 +9,33 @@ import {
   HStack,
   Icon,
 } from "@chakra-ui/react";
+import { useState } from "react";
+import { FaEnvelope, FaPhone } from "react-icons/fa";
 import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
 
 export default function ContactSection() {
+  const [form, setForm] = useState({});
   return (
-    <Box w="100%" bg="gray.50" py={20} px={{ base: 4, md: 16 }}>
+    <Box
+      w={{ base: "100%", md: "70%" }}
+      data-aos="fade"
+      bg="gray.50"
+      justifySelf="center"
+      py={20}
+      px={{ base: 4, md: 16 }}
+      mb={8}
+      mt="8vh"
+    >
       {/* Section Header */}
-      <Flex direction="column" textAlign="center" mb={12}>
-        <Text fontSize="2xl" fontWeight="bold" color="primary.500">
+      <Flex data-aos="fade-up" direction="column" textAlign="center" mb={12}>
+        <Text
+          fontSize={{ base: "xl", md: "2xl" }}
+          fontWeight="bold"
+          color="primary.500"
+        >
           CONTACT US
         </Text>
-        <Text fontSize="md" mt={2} color="gray.600">
+        <Text fontSize={{ base: "sm", md: "md" }} mt={2} color="gray.600">
           Get in touch for inquiries, quotes, or project consultation
         </Text>
       </Flex>
@@ -31,23 +47,41 @@ export default function ContactSection() {
         align="flex-start"
       >
         {/* Contact Info */}
-        <VStack align="start" spacing={4} w={{ base: "100%", md: "40%" }}>
-          <HStack>
-            <Icon as={MdPhone} color="primary.500" w={6} h={6} />
-            <Text>+234 123 456 7890</Text>
-          </HStack>
-          <HStack>
-            <Icon as={MdEmail} color="primary.500" w={6} h={6} />
-            <Text>info@yourcompany.com</Text>
-          </HStack>
-          <HStack>
-            <Icon as={MdLocationOn} color="primary.500" w={6} h={6} />
-            <Text>123 Industrial Avenue, Lagos, Nigeria</Text>
-          </HStack>
-        </VStack>
+        <Flex data-aos="fade-up" direction="column">
+          <Flex gap={4}>
+            <Icon as={MdLocationOn} boxSize={8} color="primary.500" />
+            <Flex direction="column">
+              <Text fontSize={{ base: "md", md: "lg" }}>Address</Text>
+              <Text color="gray.700" fontSize={{ base: "sm", md: "md" }}>
+                7 Ajegunle Ewekoro Lagos/Abeokuta Road Ogun State
+              </Text>
+            </Flex>
+          </Flex>
+
+          <Flex gap={4} mt={4}>
+            <Icon as={FaPhone} boxSize={8} color="primary.500" />
+            <Flex direction="column">
+              <Text fontSize={{ base: "md", md: "lg" }}>Phone</Text>
+              <Text color="gray.700" fontSize={{ base: "sm", md: "md" }}>
+                08165682612, 08032930304
+              </Text>
+            </Flex>
+          </Flex>
+
+          <Flex gap={4} mt={4}>
+            <Icon as={FaEnvelope} boxSize={8} color="primary.500" />
+            <Flex direction="column">
+              <Text fontSize={{ base: "md", md: "lg" }}>Email</Text>
+              <Text color="gray.700" fontSize={{ base: "sm", md: "md" }}>
+                oshiektech4@gmail.com
+              </Text>
+            </Flex>
+          </Flex>
+        </Flex>
 
         {/* Contact Form */}
         <Box
+          data-aos="fade-up"
           w={{ base: "100%", md: "60%" }}
           bg="white"
           p={6}
