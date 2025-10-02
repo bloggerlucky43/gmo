@@ -6,12 +6,11 @@ import {
   Textarea,
   Button,
   VStack,
-  HStack,
   Icon,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaEnvelope, FaPhone } from "react-icons/fa";
-import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
+import { MdLocationOn } from "react-icons/md";
 
 export default function ContactSection() {
   const [form, setForm] = useState({});

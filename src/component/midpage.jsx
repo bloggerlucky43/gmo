@@ -1,4 +1,4 @@
-import { Box, Flex, Text, Button, Icon } from "@chakra-ui/react";
+import { Box, Flex, Text, Icon } from "@chakra-ui/react";
 import bgImage from "../assets/building.jpg";
 import { FaCalendar, FaHandshake, FaTasks, FaUsers } from "react-icons/fa";
 export default function MidPage() {

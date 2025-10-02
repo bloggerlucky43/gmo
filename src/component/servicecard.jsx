@@ -1,9 +1,10 @@
 import { Box, Image, Text, Button } from "@chakra-ui/react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function ServiceCard({ src, title, desc }) {
   const [isOpen, setIsOpen] = useState(false);
-
+  const navigate = useNavigate();
   const handleToggle = () => {
     if (window.innerWidth < 768) {
       setIsOpen(!isOpen);
@@ -88,6 +89,7 @@ export default function ServiceCard({ src, title, desc }) {
           color="white"
           _hover={{ bg: "orange.500" }}
           opacity={isOpen ? 1 : 0}
+          onClick={() => navigate("/services")}
           transform={isOpen ? "translateY(0)" : "translateY(10px)"}
           transition="0.4s"
         >

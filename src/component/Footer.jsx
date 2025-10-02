@@ -8,9 +8,11 @@ import {
   FaPhone,
   FaTwitter,
 } from "react-icons/fa";
-import gmologo from "../assets/gmologo.png";
+import gmologo from "../assets/gmologobg.png";
 import { MdLocationOn } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 export default function () {
+  const navigate = useNavigate();
   return (
     <Box bg="primary.500" mt={{ base: "30vh", md: "10vh" }}>
       {/* translatey */}
@@ -114,7 +116,7 @@ export default function () {
             w={{ base: "full", md: "30%" }}
             direction="column"
           >
-            {/* <Image src={gmologo} /> */}
+            <Image src={gmologo} w="30%" h="auto" />
             <Text>
               GMO is a trusted service provider specializing in industrial
               electrical and mechanical installations, resourcing and
@@ -220,7 +222,13 @@ export default function () {
         >
           Copyright &copy; {new Date().getFullYear()}{" "}
           <span style={{ color: "orange" }}>Gmotechnigltd</span>. Designed by
-          <span style={{ color: "orange" }}> Altechdev</span>
+          <span
+            style={{ color: "orange" }}
+            onClick={() => navigate("https://altechdev.onrender.com")}
+          >
+            {" "}
+            Altechdev
+          </span>
         </Text>
       </Flex>
     </Box>

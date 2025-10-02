@@ -91,6 +91,7 @@ export default function Carousel() {
                   bg="orange.400"
                   color="white"
                   _hover={{ bg: "orange.500" }}
+                  onClick={() => navigate("/services")}
                 >
                   {slide.cta}
                 </Button>

@@ -1,7 +1,9 @@
 import { Box, Flex, Text, Button } from "@chakra-ui/react";
 import intmin from "../assets/intmin.jpg";
+import { useNavigate } from "react-router-dom";
 
 export const ServicePageComponent = () => {
+  const navigate = useNavigate();
   return (
     <Box mt="8vh">
       <Box
@@ -60,6 +62,7 @@ export const ServicePageComponent = () => {
               color="white"
               size="lg"
               _hover={{ bg: "orange.500" }}
+              onClick={() => navigate("/contact")}
             >
               Contact Us
             </Button>

@@ -1,7 +1,9 @@
 import { Box, Flex, Text, Button } from "@chakra-ui/react";
 import bgImage from "../assets/eng.jpg";
+import { useNavigate } from "react-router-dom";
 
 export default function CallToAction() {
+  const navigate = useNavigate();
   return (
     <Box
       data-aos="slide-up"
@@ -61,6 +63,7 @@ export default function CallToAction() {
           bg="orange.400"
           color="white"
           _hover={{ bg: "orange.500" }}
+          onClick={() => navigate("/contact")}
         >
           Talk to us
         </Button>

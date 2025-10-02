@@ -12,3 +12,8 @@
 .text-type__cursor--hidden {
   display: none;
 }
+.pageloader {
+  color: #e65c00;
+  font-size: 4rem;
+  font-weight: 900;
+}
