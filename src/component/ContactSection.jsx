@@ -24,7 +24,7 @@ export default function ContactSection() {
       py={20}
       px={{ base: 4, md: 16 }}
       mb={8}
-      mt="8vh"
+      mt={{ md: "8vh" }}
     >
       {/* Section Header */}
       <Flex data-aos="fade-up" direction="column" textAlign="center" mb={12}>

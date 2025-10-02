@@ -6,6 +6,8 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 import Contact from "./pages/Contact";
 import ServicePage from "./pages/ServicePage";
+import About from "./pages/About";
+import { TestimonialPage } from "./pages/TestimonialPage";
 function App() {
   useEffect(() => {
     AOS.init({
@@ -19,7 +21,9 @@ function App() {
     <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/about" element={<About />} />
       <Route path="/services" element={<ServicePage />} />
+      <Route path="/testimonial" element={<TestimonialPage />} />
     </Routes>
   );
 }

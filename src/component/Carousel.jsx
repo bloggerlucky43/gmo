@@ -4,10 +4,11 @@ import { Box, Flex, Text, Button } from "@chakra-ui/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import eng from "../assets/eng.jpg";
-import building from "../assets/building.jpg";
+import home1 from "../assets/home1.jpg";
+import warehouse from "../assets/warehouse.jpg";
 const slides = [
   {
-    src: building,
+    src: home1,
     title: "Reliable Industrial Installations",
     desc: "From heavy-duty electrical wiring to complex mechanical setups, we provide end-to-end installation services that meet the highest safety and performance standards. Our team ensures your facilities are built to last with efficiency and reliability in mind.",
     cta: "Learn More",
@@ -19,7 +20,7 @@ const slides = [
     cta: "Contact Us",
   },
   {
-    src: eng,
+    src: warehouse,
     title: "Industrial Cleaning & Site Maintenance",
     desc: "Our industrial cleaning services go beyond the basics — we handle machinery, warehouses, and construction sites with precision and care. Combined with vegetation clearance and water sanitation, we create safe, productive environments for your workforce.",
     cta: "Get a Quote",
@@ -28,11 +29,11 @@ const slides = [
 
 export default function Carousel() {
   return (
-    <Box mt="8vh" data-aos="fade-up" data-aos-duration="3000">
+    <Box mt="8vh" data-aos="fade-up" data-aos-duration="2000">
       <Swiper
         modules={[Pagination, Autoplay]}
         pagination={{ clickable: true }}
-        autoplay={{ delay: 4000 }}
+        autoplay={{ delay: 8000 }}
         loop
       >
         {slides.map((slide, idx) => (
@@ -54,7 +55,7 @@ export default function Carousel() {
                 w="100%"
                 h="100%"
                 bg="primary.700"
-                opacity={0.85}
+                opacity={0.8}
               />
 
               {/* Content */}

@@ -99,9 +99,9 @@ export default function NavBar() {
           color="gray.700"
           fontWeight={"bold"}
           _hover={{ color: "primary.500" }}
-          onClick={() => navigate("/services")}
+          onClick={() => navigate("/testimonial")}
         >
-          PAGES
+          TESTIMONIALS
         </Text>
         <Text
           color="gray.700"
@@ -167,9 +167,9 @@ export default function NavBar() {
                 fontWeight={"bold"}
                 mt={4}
                 _hover={{ color: "primary.500" }}
-                onClick={() => navigate("/services")}
+                onClick={() => navigate("/testimonial")}
               >
-                PAGES
+                TESTIMONIALS
               </Text>
               <Text
                 color="gray.700"

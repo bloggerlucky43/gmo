@@ -1,5 +1,6 @@
 import { Box, Flex, Heading, Text, Image, List, Icon } from "@chakra-ui/react";
-import industryImage from "../assets/heavy.jpg"; // replace with your image
+import industryImage from "../assets/interior.jpg";
+import CEO from "../assets/enginnerimage.jpeg";
 import { LuCircleCheck } from "react-icons/lu";
 import TextType from "./stylings/TextType";
 export default function AboutSection() {
@@ -38,7 +39,7 @@ export default function AboutSection() {
           </Heading>
           <TextType
             text={[
-              "We are a multi-service industrial solutions company committed todelivering high-quality, reliable, and sustainable services across different sectors. Our expertise spans installations, resourcing, recruitment, environmental management, and more — ensuringindustries run smoothly and efficiently.",
+              "We are a multi-service industrial solutions company committed to delivering high-quality, reliable, and sustainable services across different sectors. Our expertise spans installations, resourcing, recruitment, environmental management, and more — ensuring industries run smoothly and efficiently.",
             ]}
             typingSpeed={75}
             pauseDuration={1500}
@@ -98,6 +99,25 @@ export default function AboutSection() {
               Landscaping
             </List.Item>
           </List.Root>
+          {/* CEO Section */}
+          <Flex mt={10} align="center" gap={4}>
+            <Image
+              src={CEO} // replace with real CEO photo
+              alt="CEO"
+              boxSize="80px"
+              rounded="full"
+              objectFit="cover"
+              shadow="md"
+            />
+            <Box>
+              <Text fontWeight="bold" fontSize="lg" color="gray.800">
+                Mr. Godfrey Osieku
+              </Text>
+              <Text fontSize="sm" color="gray.600">
+                Founder & CEO
+              </Text>
+            </Box>
+          </Flex>
         </Box>
       </Flex>
     </Box>

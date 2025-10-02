@@ -1,4 +1,4 @@
-import { Icon, Box, Text, Flex, Heading } from "@chakra-ui/react";
+import { Icon, Box, Text, Flex, Heading, Image } from "@chakra-ui/react";
 import {
   FaEnvelope,
   FaFacebook,
@@ -8,6 +8,7 @@ import {
   FaPhone,
   FaTwitter,
 } from "react-icons/fa";
+import gmologo from "../assets/gmologo.png";
 import { MdLocationOn } from "react-icons/md";
 export default function () {
   return (
@@ -113,6 +114,7 @@ export default function () {
             w={{ base: "full", md: "30%" }}
             direction="column"
           >
+            {/* <Image src={gmologo} /> */}
             <Text>
               GMO is a trusted service provider specializing in industrial
               electrical and mechanical installations, resourcing and
