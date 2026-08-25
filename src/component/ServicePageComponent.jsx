@@ -1,5 +1,5 @@
 import { Box, Flex, Text, Button } from "@chakra-ui/react";
-import intmin from "../assets/intmin.jpg";
+import intmin from "../assets/intmin.webp";
 import { useNavigate } from "react-router-dom";
 
 export const ServicePageComponent = () => {

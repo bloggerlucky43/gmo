@@ -1,10 +1,10 @@
 import { Flex, Text, SimpleGrid } from "@chakra-ui/react";
-import about1 from "../assets/about1.jpg";
-import about2 from "../assets/about2.jpg";
-import about3 from "../assets/about3.jpg";
-import about4 from "../assets/about4.jpg";
-import about5 from "../assets/about5.jpg";
-import about6 from "../assets/about6.jpg";
+import about1 from "../assets/about1.webp";
+import about2 from "../assets/about2.webp";
+import about3 from "../assets/about3.webp";
+import about4 from "../assets/about4.webp";
+import about5 from "../assets/about5.webp";
+import about6 from "../assets/about6.webp";
 import ServiceCard from "./servicecard";
 
 const ChooseUs = () => {

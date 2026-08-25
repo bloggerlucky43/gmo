@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
-import interior from "../assets/interior.jpg";
+import interior from "../assets/interior.webp";
 
 const AboutComponent = () => {
   return (

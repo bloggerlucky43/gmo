@@ -1,6 +1,6 @@
 import { Box, Flex, Text, Image, Heading } from "@chakra-ui/react";
 import Marquee from "react-fast-marquee";
-import engineer from "../assets/enginnerimage.jpeg";
+import engineer from "../assets/enginnerimage.webp";
 const testimonials = [
   {
     name: "John Doe",

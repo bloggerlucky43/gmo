@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import { PageLoader } from "./component/PageLoader";
-import { AppLoader } from "./component/AppLoader";
 const Landing = lazy(() => import("./pages/Landing"));
 const Contact = lazy(() => import("./pages/Contact"));
 const ServicePage = lazy(() => import("./pages/ServicePage"));
@@ -16,15 +15,13 @@ const TestimonialPage = lazy(() => import("./pages/TestimonialPage"));
 function App() {
   useEffect(() => {
     AOS.init({
-      delay: 200,
-      duration: 2200,
-      easing: "ease-in-out",
+      duration: 600,
+      easing: "ease-out",
       once: true,
     });
   }, []);
   return (
     <Suspense fallback={<PageLoader />}>
-      <AppLoader />
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/contact" element={<Contact />} />

@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, Text, Image, List, Icon } from "@chakra-ui/react";
-import industryImage from "../assets/interior.jpg";
-import CEO from "../assets/enginnerimage.jpeg";
+import industryImage from "../assets/interior.webp";
+import CEO from "../assets/enginnerimage.webp";
 import { LuCircleCheck } from "react-icons/lu";
 import TextType from "./stylings/TextType";
 export default function AboutSection() {

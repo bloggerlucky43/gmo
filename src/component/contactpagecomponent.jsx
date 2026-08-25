@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
-import building from "../assets/excavator.jpg";
+import building from "../assets/excavator.webp";
 const ContactPageComponent = () => {
   return (
     <Box mt="8vh">

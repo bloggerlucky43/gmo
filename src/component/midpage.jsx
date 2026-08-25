@@ -1,5 +1,5 @@
 import { Box, Flex, Text, Icon } from "@chakra-ui/react";
-import bgImage from "../assets/building.jpg";
+import bgImage from "../assets/building.webp";
 import { FaCalendar, FaHandshake, FaTasks, FaUsers } from "react-icons/fa";
 export default function MidPage() {
   return (

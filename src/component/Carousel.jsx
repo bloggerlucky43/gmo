@@ -1,11 +1,12 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import { Box, Flex, Text, Button } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
-import eng from "../assets/eng.jpg";
-import home1 from "../assets/home1.jpg";
-import warehouse from "../assets/warehouse.jpg";
+import eng from "../assets/eng.webp";
+import home1 from "../assets/home1.webp";
+import warehouse from "../assets/warehouse.webp";
 const slides = [
   {
     src: home1,
@@ -28,8 +29,9 @@ const slides = [
 ];
 
 export default function Carousel() {
+  const navigate = useNavigate();
   return (
-    <Box mt="8vh" data-aos="fade-up" data-aos-duration="2000">
+    <Box mt="8vh" data-aos="fade-up">
       <Swiper
         modules={[Pagination, Autoplay]}
         pagination={{ clickable: true }}

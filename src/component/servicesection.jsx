@@ -1,13 +1,13 @@
 import { SimpleGrid, Flex, Text } from "@chakra-ui/react";
 import ServiceCard from "./servicecard";
-import heavy from "../assets/heavy.jpg";
-import eng from "../assets/eng.jpg";
+import heavy from "../assets/heavy.webp";
+import eng from "../assets/eng.webp";
 import num2 from "../assets/num2.jpeg";
-import labour from "../assets/labour.jpg";
-import excavator from "../assets/excavator.jpg";
-import clothing from "../assets/clothing.jpg";
-import photo from "../assets/photo.jpg";
-import building from "../assets/building.jpg";
+import labour from "../assets/labour.webp";
+import excavator from "../assets/excavator.webp";
+import clothing from "../assets/clothing.webp";
+import photo from "../assets/photo.webp";
+import building from "../assets/building.webp";
 export default function ServicesSection() {
   return (
     <Flex
@@ -77,11 +77,6 @@ export default function ServicesSection() {
           src={heavy}
           title="Land Scraping & Site Preparation"
           desc="Preparing land for industrial, construction, or mining projects with precision scraping and leveling."
-        />
-        <ServiceCard
-          src={building}
-          title="Water Treatment & Sanitation"
-          desc="Reliable sanitation services for clean and sustainable water management across industrial sites."
         />
       </SimpleGrid>
     </Flex>
