@@ -1,88 +1,217 @@
-import { Box, Flex, Text, Image, Heading } from "@chakra-ui/react";
-import Marquee from "react-fast-marquee";
-import engineer from "../assets/enginnerimage.webp";
+import { Box, Flex, Text, Heading, SimpleGrid } from "@chakra-ui/react";
+
+/*  ============================================================
+ *  PLACEHOLDER CONTENT - DO NOT PUBLISH AS-IS
+ *  ============================================================
+ *  TODO(content): every entry below is an invented sample, kept only so the
+ *  layout can be reviewed. Replace all of them with real, approved client
+ *  quotes before this goes live.
+ *
+ *  Publishing invented testimonials as if they were genuine is a false-
+ *  advertising exposure (FCCPA here in Nigeria, and equivalent consumer-
+ *  protection rules elsewhere) on top of destroying trust if a visitor
+ *  checks. Any quote that survives to production needs: written permission
+ *  to publish, the person's real name and role, their company, and ideally
+ *  the project scope.
+ *
+ *  If you don't have approved quotes yet, render fewer cards rather than
+ *  filling the row with invented ones - `limit` below supports that.
+ *  ============================================================ */
 const testimonials = [
   {
-    name: "John Doe",
-    role: "Office Manager",
-    text: "They completely transformed our office environment. The attention to detail was impressive, from spotless desks to polished floors. Their professionalism and reliability make them my go-to for any cleaning needs.",
-    image: engineer,
+    quote:
+      "They handled the plant-wide electrical retrofit without costing us a single unplanned shutdown. Their engineers worked around our production schedule instead of asking us to work around theirs.",
+    name: "Placeholder Name",
+    role: "Plant Manager",
+    company: "Sample Manufacturing Co.",
+    sector: "Manufacturing",
+    project: "Plant-wide electrical retrofit - 14 weeks",
   },
   {
-    name: "Jane Smith",
-    role: "Industrial Supervisor",
-    text: "Managing an industrial site comes with unique challenges, but their cleaning team handles it flawlessly. They are punctual, use high-quality equipment, and ensure every corner meets health and safety standards.",
-    image: engineer,
+    quote:
+      "We needed 40 certified hands on site inside two weeks. They filled the roster in nine days, every one of them with valid certification and the right PPE. That is not normal in this market.",
+    name: "Placeholder Name",
+    role: "Project Director",
+    company: "Sample Construction Ltd.",
+    sector: "Construction",
+    project: "Workforce resourcing - 40 personnel",
   },
   {
-    name: "Michael Johnson",
-    role: "Business Owner",
-    text: "Running a business is stressful enough, but I never have to worry about cleanliness thanks to their services. My clients always comment on how fresh and professional the space looks. Truly a partner I can rely on.",
-    image: engineer,
+    quote:
+      "Their vegetation clearance crews cleared access roads across three active pits and kept them clear through the wet season. Our haul trucks never lost a day to overgrowth.",
+    name: "Placeholder Name",
+    role: "Site Superintendent",
+    company: "Sample Mining Plc",
+    sector: "Mining",
+    project: "Access road clearance - 3 pits, ongoing",
   },
   {
-    name: "Sarah Williams",
+    quote:
+      "The excavators arrived when they said they would, in the condition they said they would be in, with an operator who knew the machine. We have since moved most of our plant hire to them.",
+    name: "Placeholder Name",
+    role: "Operations Lead",
+    company: "Sample Civil Works",
+    sector: "Civil Engineering",
+    project: "Equipment rental - rolling contract",
+  },
+  {
+    quote:
+      "Our water treatment compliance had been flagged twice before we brought them in. We have passed every inspection since, and they gave us the documentation to prove it.",
+    name: "Placeholder Name",
+    role: "HSE Manager",
+    company: "Sample Processing Ltd.",
+    sector: "Food Processing",
+    project: "Water treatment & sanitation - 12 months",
+  },
+  {
+    quote:
+      "Post-shutdown cleaning of the warehouse and machine hall used to take us a week of lost output. Their crew turned it around over a weekend and left the floors better than we found them.",
+    name: "Placeholder Name",
     role: "Facility Director",
-    text: "I appreciate their eco-friendly cleaning products and sustainable approach. The team is well-trained, friendly, and extremely thorough. They consistently deliver beyond expectations.",
-    image: engineer,
+    company: "Sample Logistics Co.",
+    sector: "Warehousing",
+    project: "Industrial deep clean - biannual",
   },
 ];
 
-export default function TestimonialMarquee() {
+const initials = (value) =>
+  value
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((word) => word[0])
+    .join("")
+    .toUpperCase();
+
+export default function Testimonials({
+  limit,
+  showHeading = true,
+  bg = "gray.50",
+}) {
+  const items = limit ? testimonials.slice(0, limit) : testimonials;
+
   return (
-    <Box data-aos="slide-left" w="100%" py={10} bg="gray.50" mt="5vh">
-      <Flex
-        data-aos="fade-up"
-        direction="column"
-        w={{ base: "90%", md: "85%", lg: "70%" }}
-        mt={{ base: "6vh", md: "8vh", lg: "10vh" }}
-        justifySelf="center"
-      >
-        <Heading
-          fontSize={{ base: "x-large", md: "xx-large", lg: "xx-large" }}
-          mb={8}
-          color="primary.500"
-        >
-          TESTIMONIALS
-        </Heading>
-        <Text color="gray.900" mb={{ base: "8", md: "10" }}>
-          Hear from our clients who trust us to keep their spaces spotless.
-        </Text>
-      </Flex>
-      <Flex justifySelf="center" w={{ base: "100%", md: "80%" }} mb="5vh">
-        <Marquee pauseOnHover gradient={false} speed={50}>
-          {testimonials.map((t, index) => (
-            <Flex
-              key={index}
-              align="center"
-              mx={6}
-              p={6}
-              bg="white"
-              rounded="2xl"
-              boxShadow="md"
-              minW="350px"
-              maxW="400px"
+    <Box as="section" w="100%" bg={bg} py={{ base: 16, md: 24 }} id="testimonials">
+      <Box w={{ base: "90%", md: "85%", lg: "70%" }} mx="auto">
+        {showHeading && (
+          <Box maxW="640px" mb={{ base: 10, md: 14 }} data-aos="fade-up">
+            <Text
+              fontSize="xs"
+              fontWeight="bold"
+              letterSpacing="widest"
+              textTransform="uppercase"
+              color="orange.500"
+              mb={3}
             >
-              <Image
-                src={t.image}
-                alt={t.name}
-                boxSize="120px"
-                borderRadius="full"
-                mr={4}
-              />
-              <Box>
-                <Text fontWeight="bold">{t.name}</Text>
-                <Text fontSize="sm" color="primary.400" mb={3}>
-                  {t.role}
-                </Text>
-                <Text fontSize="sm" color="gray.600">
-                  {t.text}
-                </Text>
-              </Box>
+              What our clients say
+            </Text>
+            <Heading
+              as="h2"
+              fontSize={{ base: "2xl", md: "4xl" }}
+              color="primary.500"
+              lineHeight="1.2"
+              mb={4}
+            >
+              Judged on site, not on paper
+            </Heading>
+            <Text color="gray.600" fontSize={{ base: "sm", md: "md" }}>
+              Plant managers, site superintendents and HSE leads on what it is
+              like to have our crews and equipment on their projects.
+            </Text>
+          </Box>
+        )}
+
+        <SimpleGrid
+          columns={{ base: 1, md: 2, lg: 3 }}
+          gap={{ base: 6, md: 8 }}
+          alignItems="stretch"
+        >
+          {items.map((item, index) => (
+            <Flex
+              key={`${item.company}-${index}`}
+              as="blockquote"
+              direction="column"
+              bg="white"
+              p={{ base: 6, md: 7 }}
+              rounded="xl"
+              borderWidth="1px"
+              borderColor="gray.200"
+              borderLeftWidth="3px"
+              borderLeftColor="orange.500"
+              boxShadow="sm"
+              transition="transform 0.25s, box-shadow 0.25s"
+              _hover={{ transform: "translateY(-4px)", boxShadow: "lg" }}
+              data-aos="fade-up"
+              data-aos-delay={index * 80}
+            >
+              {/* Sector acts as a categoriser so a buyer can find their own industry */}
+              <Text
+                fontSize="xs"
+                fontWeight="bold"
+                letterSpacing="wider"
+                textTransform="uppercase"
+                color="primary.400"
+                mb={4}
+              >
+                {item.sector}
+              </Text>
+
+              <Text
+                aria-hidden="true"
+                fontSize="5xl"
+                lineHeight="0.7"
+                fontWeight="bold"
+                color="orange.500"
+                opacity={0.3}
+                mb={3}
+              >
+                &ldquo;
+              </Text>
+
+              <Text
+                color="gray.700"
+                fontSize={{ base: "sm", md: "md" }}
+                lineHeight="1.8"
+                flex="1"
+              >
+                {item.quote}
+              </Text>
+
+              <Box h="1px" bg="gray.200" my={5} />
+
+              <Flex align="center" gap={3}>
+                <Flex
+                  boxSize="44px"
+                  flexShrink={0}
+                  rounded="full"
+                  bg="primary.500"
+                  color="white"
+                  align="center"
+                  justify="center"
+                  fontWeight="bold"
+                  fontSize="sm"
+                  letterSpacing="wide"
+                  aria-hidden="true"
+                >
+                  {initials(item.company)}
+                </Flex>
+                <Box minW={0}>
+                  <Text fontWeight="bold" fontSize="sm" color="gray.900">
+                    {item.name}
+                  </Text>
+                  <Text fontSize="xs" color="gray.600">
+                    {item.role} &middot; {item.company}
+                  </Text>
+                </Box>
+              </Flex>
+
+              <Text fontSize="xs" color="gray.500" mt={3}>
+                {item.project}
+              </Text>
             </Flex>
           ))}
-        </Marquee>
-      </Flex>
+        </SimpleGrid>
+      </Box>
     </Box>
   );
 }

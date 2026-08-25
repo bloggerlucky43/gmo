@@ -2,11 +2,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import { Box, Flex, Text, Button } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import { preload } from "react-dom";
 import "swiper/css";
 import "swiper/css/pagination";
 import eng from "../assets/eng.webp";
 import home1 from "../assets/home1.webp";
 import warehouse from "../assets/warehouse.webp";
+
+// The first slide is rendered as a CSS background-image, which the browser
+// cannot discover until it has parsed the CSS and run layout. Preloading it
+// lets the request start immediately, which is what the LCP measures here.
+preload(home1, { as: "image", fetchPriority: "high" });
 const slides = [
   {
     src: home1,

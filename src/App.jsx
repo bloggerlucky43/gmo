@@ -11,6 +11,10 @@ const Contact = lazy(() => import("./pages/Contact"));
 const ServicePage = lazy(() => import("./pages/ServicePage"));
 const About = lazy(() => import("./pages/About"));
 const TestimonialPage = lazy(() => import("./pages/TestimonialPage"));
+const Projects = lazy(() => import("./pages/Projects"));
+const Equipment = lazy(() => import("./pages/Equipment"));
+const Quote = lazy(() => import("./pages/Quote"));
+const Careers = lazy(() => import("./pages/Careers"));
 
 function App() {
   useEffect(() => {
@@ -28,6 +32,10 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<ServicePage />} />
         <Route path="/testimonial" element={<TestimonialPage />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/equipment" element={<Equipment />} />
+        <Route path="/quote" element={<Quote />} />
+        <Route path="/careers" element={<Careers />} />
         <Route path="*" element={<Landing />} />
       </Routes>
     </Suspense>

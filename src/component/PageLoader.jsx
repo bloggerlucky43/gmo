@@ -5,7 +5,7 @@ export const PageLoader = () => {
   return (
     <Flex justify="center" zIndex={2} align="center" minH="100vh">
       <TextType
-        text={["GMO"]}
+        text={["Gmoshiektech"]}
         typingSpeed={50}
         pauseDuration={1500}
         showCursor={true}

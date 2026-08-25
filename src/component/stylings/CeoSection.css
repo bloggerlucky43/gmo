@@ -1,0 +1,57 @@
+/* Founder section: the two things Chakra tokens cannot express here - a
+ * cursive stack for the signature, and the slow sheen across the portrait
+ * panel. Both live in CSS so the reduced-motion guard sits next to the
+ * animation it disables, matching TextType.css. */
+
+.ceo-signature {
+  /* System cursive faces only - no webfont request for one line of text.
+     Segoe Script ships on Windows, Bradley Hand / Snell Roundhand on macOS,
+     Brush Script MT on both, then the generic. */
+  font-family: "Segoe Script", "Bradley Hand", "Snell Roundhand",
+    "Brush Script MT", cursive;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* Narrow highlight that travels across the portrait once every few seconds.
+   Transform-only so it stays on the compositor. The parent clips it. */
+.ceo-portrait__sheen {
+  position: absolute;
+  top: -10%;
+  left: -55%;
+  width: 40%;
+  height: 120%;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.16),
+    transparent
+  );
+  animation: ceo-sheen 9s ease-in-out infinite;
+}
+
+@keyframes ceo-sheen {
+  0% {
+    transform: rotate(12deg) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(12deg) translateX(420%);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(12deg) translateX(420%);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ceo-portrait__sheen {
+    animation: none;
+    opacity: 0;
+  }
+}

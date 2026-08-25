@@ -9,8 +9,7 @@ import {
   Icon,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { FaEnvelope, FaPhone } from "react-icons/fa";
-import { MdLocationOn } from "react-icons/md";
+import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 
 export default function ContactSection() {
   const [form, setForm] = useState({});
@@ -48,7 +47,7 @@ export default function ContactSection() {
         {/* Contact Info */}
         <Flex data-aos="fade-up" direction="column">
           <Flex gap={4}>
-            <Icon as={MdLocationOn} boxSize={8} color="primary.500" />
+            <Icon as={FaMapMarkerAlt} boxSize={8} color="primary.500" />
             <Flex direction="column">
               <Text fontSize={{ base: "md", md: "lg" }}>Address</Text>
               <Text color="gray.700" fontSize={{ base: "sm", md: "md" }}>

@@ -58,9 +58,9 @@ export default function MidPageCta() {
           bg="orange.400"
           color="white"
           _hover={{ bg: "orange.500" }}
-          onClick={() => navigate("/contact")}
+          onClick={() => navigate("/quote")}
         >
-          Talk to us
+          Get a quote
         </Button>
       </Flex>
     </Box>

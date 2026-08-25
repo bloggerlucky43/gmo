@@ -1,4 +1,4 @@
-import { Icon, Box, Text, Flex, Heading, Image } from "@chakra-ui/react";
+import { Box, Text, Flex, Heading, Image, SimpleGrid, Icon } from "@chakra-ui/react";
 import {
   FaEnvelope,
   FaFacebook,
@@ -7,228 +7,377 @@ import {
   FaLongArrowAltRight,
   FaPhone,
   FaTwitter,
+  FaMapMarkerAlt,
+  FaWhatsapp,
 } from "react-icons/fa";
 import gmologo from "../assets/gmologobg.png";
-import { MdLocationOn } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
-export default function () {
-  const navigate = useNavigate();
+import { Link as RouterLink } from "react-router-dom";
+import {
+  ADDRESS,
+  PHONES,
+  EMAIL,
+  SOCIAL_URLS,
+  telHref,
+  mapsHref,
+  whatsappHref,
+} from "../config/contact";
+
+const whatsappLink = whatsappHref();
+
+/* Social links come from src/config/contact.js. Entries with an empty URL are
+ * filtered out, so the footer never renders a dead link. */
+const SOCIALS = [
+  { label: "WhatsApp", icon: FaWhatsapp, href: whatsappLink },
+  { label: "Facebook", icon: FaFacebook, href: SOCIAL_URLS.facebook },
+  { label: "Instagram", icon: FaInstagram, href: SOCIAL_URLS.instagram },
+  { label: "LinkedIn", icon: FaLinkedin, href: SOCIAL_URLS.linkedin },
+  { label: "X (Twitter)", icon: FaTwitter, href: SOCIAL_URLS.twitter },
+].filter((social) => social.href);
+
+const COMPANY_LINKS = [
+  { label: "Home", to: "/" },
+  { label: "About Us", to: "/about" },
+  { label: "Services", to: "/services" },
+  { label: "Projects", to: "/projects" },
+  { label: "Equipment & Fleet", to: "/equipment" },
+  { label: "Testimonials", to: "/testimonial" },
+  { label: "Work With Us", to: "/careers" },
+  { label: "Request a Quote", to: "/quote" },
+  { label: "Contact", to: "/contact" },
+];
+
+const SERVICE_LINKS = [
+  "Electrical & Mechanical Installations",
+  "Resourcing & Outsourcing",
+  "Equipment Rental",
+  "Industrial Cleaning",
+  "Labour Recruiting",
+  "Mining Area Vegetation",
+  "Water Sanitation",
+  "Landscaping",
+];
+
+/* Shared link styling so hover and keyboard focus behave consistently. */
+const linkStyles = {
+  color: "whiteAlpha.800",
+  fontSize: "sm",
+  transition: "color 0.2s",
+  _hover: { color: "orange.400" },
+  _focusVisible: {
+    outline: "2px solid",
+    outlineColor: "orange.400",
+    outlineOffset: "2px",
+  },
+};
+
+const ColumnHeading = ({ children }) => (
+  <Heading
+    as="h3"
+    fontSize={{ base: "md", md: "lg" }}
+    color="white"
+    pb={4}
+    mb={5}
+    borderBottom="solid 2px"
+    borderColor="orange.500"
+  >
+    {children}
+  </Heading>
+);
+
+export default function Footer() {
   return (
-    <Box bg="primary.500" mt={{ base: "30vh", md: "10vh" }}>
-      {/* translatey */}
-      <Flex
+    <Box as="footer" bg="primary.500" mt={{ base: 20, md: 28 }}>
+      {/* Actionable contact strip. A negative top margin lifts it over the
+          preceding section, replacing the old translateY(-180px) + 30vh hack
+          that left a large dead gap. */}
+      <SimpleGrid
+        columns={{ base: 1, lg: 3 }}
+        gap={{ base: 5, lg: 8 }}
         bg="orange.500"
-        w={{ base: "80%", md: "70%" }}
+        w={{ base: "88%", md: "80%", lg: "70%" }}
+        mx="auto"
+        mt={{ base: -10, md: -14 }}
         py={6}
-        px={4}
-        justifySelf="center"
-        justify={"space-between"}
-        borderRadius={{ md: "lg" }}
-        transform={{ base: "translateY(-180px)", md: "translateY(-80px)" }}
-        direction={{ base: "column", lg: "row" }}
+        px={{ base: 5, md: 6 }}
+        borderRadius="lg"
+        boxShadow="lg"
+        data-aos="fade-up"
       >
         <Flex
-          color="whiteAlpha.900"
-          w={{ base: "full", md: "30%" }}
+          as="a"
+          href={mapsHref}
+          target="_blank"
+          rel="noopener noreferrer"
           align="center"
-          mb={4}
-          data-aos="fade-up"
-          gap={2}
+          gap={4}
+          color="whiteAlpha.900"
+          transition="opacity 0.2s"
+          _hover={{ opacity: 0.85 }}
         >
-          <Icon
-            as={MdLocationOn}
-            borderRadius="md"
-            boxSize={16}
-            bg="primary.500"
-            p={2}
-          />
-          <Flex direction="column">
-            <Heading fontSize={{ base: "md", md: "lg" }}>
+          <Icon as={FaMapMarkerAlt} boxSize={7} flexShrink={0} />
+          <Box>
+            <Heading fontSize={{ base: "sm", md: "md" }}>
               Company Address
             </Heading>
-            <Text mt={{ md: "2" }}>
-              7 Ajegunle Ewekoro Lagos/Abeokuta Road Ogun state
+            <Text fontSize="sm" mt={1}>
+              {ADDRESS}
             </Text>
-          </Flex>
+          </Box>
         </Flex>
 
-        <Flex
-          color="whiteAlpha.900"
-          w={{ base: "full", md: "30%" }}
-          align="center"
-          mb={4}
-          gap={2}
-          data-aos="fade-up"
-        >
-          <Icon
-            as={FaPhone}
-            borderRadius="md"
-            boxSize={16}
-            bg="primary.500"
-            p={2}
-          />
-          <Flex direction="column">
-            <Heading fontSize={{ base: "md", md: "lg" }}>
-              Contact Information
-            </Heading>
-            <Text mt={{ md: "2" }}>08165682612, 08032930304</Text>
-          </Flex>
+        <Flex align="center" gap={4} color="whiteAlpha.900">
+          <Icon as={FaPhone} boxSize={7} flexShrink={0} />
+          <Box>
+            <Heading fontSize={{ base: "sm", md: "md" }}>Call Us</Heading>
+            <Flex direction="column" mt={1}>
+              {PHONES.map((phone) => (
+                <Box
+                  as="a"
+                  key={phone}
+                  href={telHref(phone)}
+                  fontSize="sm"
+                  _hover={{ textDecoration: "underline" }}
+                >
+                  {phone}
+                </Box>
+              ))}
+            </Flex>
+          </Box>
         </Flex>
 
-        <Flex
-          color="whiteAlpha.900"
-          w={{ base: "full", md: "30%" }}
-          align="center"
-          mb={4}
-          gap={2}
-          data-aos="fade-up"
-        >
-          <Icon
-            as={FaEnvelope}
-            boxSize={16}
-            bg="primary.500"
-            borderRadius="md"
-            p={2}
-          />
-          <Flex direction="column">
-            <Heading fontSize={{ base: "md", md: "lg" }}>Contact Email</Heading>
-            <Text mt={{ md: "2" }}>oshiektech4@gmail.com</Text>
-          </Flex>
+        <Flex align="center" gap={4} color="whiteAlpha.900">
+          <Icon as={FaEnvelope} boxSize={7} flexShrink={0} />
+          <Box minW={0}>
+            <Heading fontSize={{ base: "sm", md: "md" }}>Email Us</Heading>
+            <Box
+              as="a"
+              href={`mailto:${EMAIL}`}
+              fontSize="sm"
+              mt={1}
+              display="block"
+              wordBreak="break-word"
+              _hover={{ textDecoration: "underline" }}
+            >
+              {EMAIL}
+            </Box>
+          </Box>
         </Flex>
-      </Flex>
+      </SimpleGrid>
 
-      {/* footer details */}
-      <Flex
-        data-aos="fade-up"
-        direction={{ base: "column", md: "row" }}
-        justifySelf="center"
-        color="whiteAlpha.900"
-        w={{ base: "90%", md: "70%" }}
+      {/* Main footer columns */}
+      <Box
+        w={{ base: "88%", md: "85%", lg: "70%" }}
+        mx="auto"
+        pt={{ base: 12, md: 16 }}
       >
-        <Flex
-          data-aos="fade-up"
-          mb={{ md: "10vh" }}
-          direction={{ base: "column", md: "row" }}
-          justify="space-between"
-        >
-          <Flex
-            data-aos="fade-up"
-            w={{ base: "full", md: "30%" }}
-            direction="column"
-          >
-            <Image src={gmologo} w="30%" h="auto" />
-            <Text>
-              GMO is a trusted service provider specializing in industrial
-              electrical and mechanical installations, resourcing and
-              outsourcing, labor recruiting, rental services, and industrial
-              cleaning. We also deliver tailored solutions in vegetation
-              management for mining areas, water sanitation, and landscaping —
-              ensuring efficiency, safety, and sustainability for every project.
+        <SimpleGrid columns={{ base: 1, sm: 2, lg: 4 }} gap={{ base: 10, md: 8 }}>
+          {/* Brand */}
+          <Box>
+            <Image
+              src={gmologo}
+              alt="GMO Technic Ltd"
+              w="120px"
+              h="auto"
+              mb={4}
+            />
+            <Text color="whiteAlpha.800" fontSize="sm" lineHeight="1.7">
+              A trusted industrial service provider delivering electrical and
+              mechanical installations, workforce resourcing, equipment rental
+              and environmental services with a focus on safety and reliability.
             </Text>
-            <Flex data-aos="fade-up" gap={4} mt={4}>
-              <Icon
-                as={FaFacebook}
-                color="primary.900"
-                _hover={{ color: "orange.500" }}
-                boxSize={6}
-              />
-              <Icon
-                as={FaInstagram}
-                color="primary.900"
-                _hover={{ color: "orange.500" }}
-                boxSize={6}
-              />
-              <Icon
-                as={FaLinkedin}
-                color="primary.900"
-                _hover={{ color: "orange.500" }}
-                boxSize={6}
-              />
-              <Icon
-                as={FaTwitter}
-                color="primary.900"
-                _hover={{ color: "orange.500" }}
-                boxSize={6}
-              />
-            </Flex>
-          </Flex>
 
-          {/* useful links */}
-          <Flex
-            direction="column"
-            cursor="pointer"
-            mt={{ base: "8vh", md: "0" }}
-            w={{ md: "30%" }}
-          >
-            <Flex
-              borderBottom="solid 2px"
-              borderColor="orange.500"
-              pb={8}
-              mb={8}
-            >
-              <Heading>Useful Links</Heading>
-            </Flex>
-            <Flex align="center" gap={2}>
-              <Icon as={FaLongArrowAltRight} />
-              <Text>About Us</Text>
-            </Flex>
-            <Flex align="center" gap={2}>
-              <Icon as={FaLongArrowAltRight} />
-              <Text>Our Team</Text>
-            </Flex>
-          </Flex>
+            {SOCIALS.length > 0 && (
+              <Flex gap={3} mt={6}>
+                {SOCIALS.map(({ label, icon, href }) => (
+                  <Flex
+                    as="a"
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    boxSize={10}
+                    align="center"
+                    justify="center"
+                    borderRadius="full"
+                    bg="whiteAlpha.200"
+                    color="white"
+                    transition="background 0.2s"
+                    _hover={{ bg: "orange.500" }}
+                    _focusVisible={{
+                      outline: "2px solid",
+                      outlineColor: "orange.400",
+                      outlineOffset: "2px",
+                    }}
+                  >
+                    <Icon as={icon} boxSize={5} />
+                  </Flex>
+                ))}
+              </Flex>
+            )}
+          </Box>
 
-          <Flex
-            direction="column"
-            mt={{ base: "8vh", md: "0" }}
-            w={{ md: "30%" }}
-          >
-            <Flex
-              pb={8}
-              mb={8}
-              borderBottom="solid 2px"
-              borderColor="orange.500"
-            >
-              <Heading>Contact Info</Heading>
+          {/* Company */}
+          <Box>
+            <ColumnHeading>Company</ColumnHeading>
+            <Flex direction="column" gap={3}>
+              {COMPANY_LINKS.map(({ label, to }) => (
+                <Flex key={to} align="center" gap={2}>
+                  <Icon
+                    as={FaLongArrowAltRight}
+                    boxSize={3}
+                    color="orange.400"
+                    flexShrink={0}
+                  />
+                  <Box asChild {...linkStyles}>
+                    <RouterLink to={to}>{label}</RouterLink>
+                  </Box>
+                </Flex>
+              ))}
             </Flex>
-            <Flex gap={2}>
-              <Icon as={MdLocationOn} boxSize={5} />
-              <Text>No 7, Ajegunle Ewekoro Lagos/Abeokuta Road Ogun State</Text>
-            </Flex>
-            <Flex align="center" gap={2}>
-              <Icon as={FaPhone} boxSize={5} />
-              <Text>08165682612,08032930304</Text>
-            </Flex>
-            <Flex align="center" gap={2}>
-              <Icon as={FaEnvelope} boxSize={5} />
-              <Text>oshiektech4@gmail.com</Text>
-            </Flex>
-          </Flex>
-        </Flex>
-      </Flex>
+          </Box>
 
+          {/* Services */}
+          <Box>
+            <ColumnHeading>Services</ColumnHeading>
+            <Flex direction="column" gap={3}>
+              {SERVICE_LINKS.map((label) => (
+                <Flex key={label} align="center" gap={2}>
+                  <Icon
+                    as={FaLongArrowAltRight}
+                    boxSize={3}
+                    color="orange.400"
+                    flexShrink={0}
+                  />
+                  <Box asChild {...linkStyles}>
+                    <RouterLink to="/services">{label}</RouterLink>
+                  </Box>
+                </Flex>
+              ))}
+            </Flex>
+          </Box>
+
+          {/* Get in touch */}
+          <Box>
+            <ColumnHeading>Get In Touch</ColumnHeading>
+            <Flex direction="column" gap={4}>
+              <Flex
+                as="a"
+                href={mapsHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                gap={3}
+                {...linkStyles}
+              >
+                <Icon
+                  as={FaMapMarkerAlt}
+                  boxSize={4}
+                  color="orange.400"
+                  mt={1}
+                  flexShrink={0}
+                />
+                <Text fontSize="sm">{ADDRESS}</Text>
+              </Flex>
+
+              {PHONES.map((phone) => (
+                <Flex
+                  as="a"
+                  key={phone}
+                  href={telHref(phone)}
+                  gap={3}
+                  align="center"
+                  {...linkStyles}
+                >
+                  <Icon
+                    as={FaPhone}
+                    boxSize={4}
+                    color="orange.400"
+                    flexShrink={0}
+                  />
+                  <Text fontSize="sm">{phone}</Text>
+                </Flex>
+              ))}
+
+              <Flex
+                as="a"
+                href={`mailto:${EMAIL}`}
+                gap={3}
+                align="center"
+                {...linkStyles}
+              >
+                <Icon
+                  as={FaEnvelope}
+                  boxSize={4}
+                  color="orange.400"
+                  flexShrink={0}
+                />
+                <Text fontSize="sm" wordBreak="break-word">
+                  {EMAIL}
+                </Text>
+              </Flex>
+
+              {/* Primary WhatsApp call to action */}
+              <Flex
+                as="a"
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                align="center"
+                justify="center"
+                gap={2}
+                mt={2}
+                py={3}
+                px={4}
+                borderRadius="md"
+                bg="#25D366"
+                color="white"
+                fontWeight="bold"
+                fontSize="sm"
+                transition="filter 0.2s"
+                _hover={{ filter: "brightness(0.92)" }}
+                _focusVisible={{
+                  outline: "2px solid",
+                  outlineColor: "white",
+                  outlineOffset: "2px",
+                }}
+              >
+                <Icon as={FaWhatsapp} boxSize={5} />
+                Chat on WhatsApp
+              </Flex>
+            </Flex>
+          </Box>
+        </SimpleGrid>
+      </Box>
+
+      {/* Bottom bar */}
       <Flex
         bg="primary.400"
-        cursor={"pointer"}
-        color={"whiteAlpha.900"}
+        color="whiteAlpha.900"
         justify="center"
-        py={{ base: "3", md: "6" }}
-        mt={{ base: "8vh", md: "0" }}
+        py={{ base: 4, md: 5 }}
+        mt={{ base: 12, md: 16 }}
+        px={4}
       >
         <Text
           fontSize={{ base: "xs", md: "sm" }}
-          textAlign={{ base: "center" }}
+          textAlign="center"
           fontWeight="semibold"
         >
           Copyright &copy; {new Date().getFullYear()}{" "}
-          <span style={{ color: "orange" }}>Gmotechnigltd</span>. Designed by
-          <span
-            style={{ color: "orange" }}
-            onClick={() => navigate("https://altechdev.onrender.com")}
+          <Box as="span" color="orange.400">
+            Gmotechnigltd
+          </Box>
+          . Designed by{" "}
+          <Box
+            as="a"
+            href="https://altechdev.onrender.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            color="orange.400"
+            _hover={{ textDecoration: "underline" }}
           >
-            {" "}
             Altechdev
-          </span>
+          </Box>
         </Text>
       </Flex>
     </Box>

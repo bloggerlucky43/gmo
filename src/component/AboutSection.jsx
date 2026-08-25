@@ -1,7 +1,7 @@
-import { Box, Flex, Heading, Text, Image, List, Icon } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, List } from "@chakra-ui/react";
 import industryImage from "../assets/interior.webp";
-import CEO from "../assets/enginnerimage.webp";
-import { LuCircleCheck } from "react-icons/lu";
+// The founder now has a section of his own - see CeoSection.jsx.
+import { FaCheckCircle } from "react-icons/fa";
 import TextType from "./stylings/TextType";
 export default function AboutSection() {
   return (
@@ -52,72 +52,53 @@ export default function AboutSection() {
           <List.Root gap="2" mt={6} variant="plain" align="center">
             <List.Item>
               <List.Indicator asChild color="orange.500">
-                <LuCircleCheck />
+                <FaCheckCircle />
               </List.Indicator>
               Industrial Electrical & Mechanical Installations
             </List.Item>
             <List.Item>
               <List.Indicator asChild color="orange.500">
-                <LuCircleCheck />
+                <FaCheckCircle />
               </List.Indicator>
               Resourcing & Outsourcing
             </List.Item>
             <List.Item>
               <List.Indicator asChild color="orange.500">
-                <LuCircleCheck />
+                <FaCheckCircle />
               </List.Indicator>
               Rental Services
             </List.Item>
             <List.Item>
               <List.Indicator asChild color="orange.500">
-                <LuCircleCheck />
+                <FaCheckCircle />
               </List.Indicator>
               Industrial Cleaning Services
             </List.Item>
             <List.Item>
               <List.Indicator asChild color="orange.500">
-                <LuCircleCheck />
+                <FaCheckCircle />
               </List.Indicator>
               Labour Recruiting
             </List.Item>
             <List.Item>
               <List.Indicator asChild color="orange.500">
-                <LuCircleCheck />
+                <FaCheckCircle />
               </List.Indicator>
               Vegetation of Mining Areas
             </List.Item>
             <List.Item>
               <List.Indicator asChild color="orange.500">
-                <LuCircleCheck />
+                <FaCheckCircle />
               </List.Indicator>
               Water Sanitation Services
             </List.Item>
             <List.Item>
               <List.Indicator asChild color="orange.500">
-                <LuCircleCheck />
+                <FaCheckCircle />
               </List.Indicator>
               Landscaping
             </List.Item>
           </List.Root>
-          {/* CEO Section */}
-          <Flex mt={10} align="center" gap={4}>
-            <Image
-              src={CEO} // replace with real CEO photo
-              alt="CEO"
-              boxSize="80px"
-              rounded="full"
-              objectFit="cover"
-              shadow="md"
-            />
-            <Box>
-              <Text fontWeight="bold" fontSize="lg" color="gray.800">
-                Mr. Godfrey Osieku
-              </Text>
-              <Text fontSize="sm" color="gray.600">
-                Founder & CEO
-              </Text>
-            </Box>
-          </Flex>
         </Box>
       </Flex>
     </Box>

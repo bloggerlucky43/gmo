@@ -5,6 +5,7 @@ import AboutSection from "../component/AboutSection";
 import ChooseUs from "../component/ChooseUs";
 import AboutComponent from "../component/AboutComponent";
 import CallToAction from "../component/CalltoAction";
+import CeoSection from "../component/CeoSection";
 const About = () => {
   return (
     <Box>
@@ -13,6 +14,7 @@ const About = () => {
         <AboutComponent />
 
         <AboutSection />
+        <CeoSection />
         <CallToAction />
         <ChooseUs />
         <Footer />
