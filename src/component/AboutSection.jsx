@@ -3,6 +3,23 @@ import industryImage from "../assets/interior.webp";
 // The founder now has a section of his own - see CeoSection.jsx.
 import { FaCheckCircle } from "react-icons/fa";
 import TextType from "./stylings/TextType";
+import { FOUNDED_YEAR, LEGAL_NAME } from "../config/contact";
+
+/* Both paragraphs and the list below are drawn from the "About Us" and "Our
+ * Services" sections of the company profile document in src/assets. */
+const CAPABILITIES = [
+  "Electrical Installation & Maintenance",
+  "Mechanical Fabrication & Fittings",
+  "Civil Engineering Jobs",
+  "Shutdown Services",
+  "Rehabilitation of Mining Areas",
+  "Vegetation Control & Tree Planting",
+  "Landscaping & Site Preparation",
+  "Skilled & Unskilled Labour Supply",
+  "Pond & Lake Management",
+  "General Contracting Services",
+];
+
 export default function AboutSection() {
   return (
     <Box w="100%" py={16} bg="white" id="about">
@@ -39,7 +56,7 @@ export default function AboutSection() {
           </Heading>
           <TextType
             text={[
-              "We are a multi-service industrial solutions company committed to delivering high-quality, reliable, and sustainable services across different sectors. Our expertise spans installations, resourcing, recruitment, environmental management, and more — ensuring industries run smoothly and efficiently.",
+              `${LEGAL_NAME} is a trusted Nigerian general contracting company established in ${FOUNDED_YEAR}, providing reliable technical, engineering and industrial support services across multiple sectors. With a strong commitment to professionalism, growth and excellence, we deliver quality solutions tailored to the needs of industries, businesses and residential clients.`,
             ]}
             typingSpeed={75}
             pauseDuration={1500}
@@ -47,57 +64,16 @@ export default function AboutSection() {
             cursorCharacter="_"
             textColors={["black"]}
           />
-          {/* <Text color="gray.700" fontSize="lg" mb={6}></Text> */}
 
           <List.Root gap="2" mt={6} variant="plain" align="center">
-            <List.Item>
-              <List.Indicator asChild color="orange.500">
-                <FaCheckCircle />
-              </List.Indicator>
-              Industrial Electrical & Mechanical Installations
-            </List.Item>
-            <List.Item>
-              <List.Indicator asChild color="orange.500">
-                <FaCheckCircle />
-              </List.Indicator>
-              Resourcing & Outsourcing
-            </List.Item>
-            <List.Item>
-              <List.Indicator asChild color="orange.500">
-                <FaCheckCircle />
-              </List.Indicator>
-              Rental Services
-            </List.Item>
-            <List.Item>
-              <List.Indicator asChild color="orange.500">
-                <FaCheckCircle />
-              </List.Indicator>
-              Industrial Cleaning Services
-            </List.Item>
-            <List.Item>
-              <List.Indicator asChild color="orange.500">
-                <FaCheckCircle />
-              </List.Indicator>
-              Labour Recruiting
-            </List.Item>
-            <List.Item>
-              <List.Indicator asChild color="orange.500">
-                <FaCheckCircle />
-              </List.Indicator>
-              Vegetation of Mining Areas
-            </List.Item>
-            <List.Item>
-              <List.Indicator asChild color="orange.500">
-                <FaCheckCircle />
-              </List.Indicator>
-              Water Sanitation Services
-            </List.Item>
-            <List.Item>
-              <List.Indicator asChild color="orange.500">
-                <FaCheckCircle />
-              </List.Indicator>
-              Landscaping
-            </List.Item>
+            {CAPABILITIES.map((capability) => (
+              <List.Item key={capability}>
+                <List.Indicator asChild color="orange.500">
+                  <FaCheckCircle />
+                </List.Indicator>
+                {capability}
+              </List.Item>
+            ))}
           </List.Root>
         </Box>
       </Flex>

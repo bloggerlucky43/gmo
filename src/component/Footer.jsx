@@ -16,6 +16,8 @@ import {
   ADDRESS,
   PHONES,
   EMAIL,
+  LEGAL_NAME,
+  RC_NUMBER,
   SOCIAL_URLS,
   telHref,
   mapsHref,
@@ -47,14 +49,16 @@ const COMPANY_LINKS = [
 ];
 
 const SERVICE_LINKS = [
-  "Electrical & Mechanical Installations",
-  "Resourcing & Outsourcing",
-  "Equipment Rental",
-  "Industrial Cleaning",
-  "Labour Recruiting",
-  "Mining Area Vegetation",
-  "Water Sanitation",
-  "Landscaping",
+  "Electrical Installation & Maintenance",
+  "Mechanical Fabrication & Fittings",
+  "Civil Engineering Jobs",
+  "Shutdown Services",
+  "General Contracting",
+  "Skilled & Unskilled Labour Supply",
+  "Mining Area Rehabilitation",
+  "Vegetation Control & Tree Planting",
+  "Pond & Lake Management",
+  "Landscaping & Site Preparation",
 ];
 
 /* Shared link styling so hover and keyboard focus behave consistently. */
@@ -181,10 +185,25 @@ export default function Footer() {
               mb={4}
             />
             <Text color="whiteAlpha.800" fontSize="sm" lineHeight="1.7">
-              A trusted industrial service provider delivering electrical and
-              mechanical installations, workforce resourcing, equipment rental
-              and environmental services with a focus on safety and reliability.
+              A trusted Nigerian general contracting company delivering
+              technical, engineering and industrial support services with a focus
+              on safety, professionalism and reliability.
             </Text>
+
+            {/* Registered identity - tender and procurement teams look for it. */}
+            <Box
+              mt={5}
+              pt={4}
+              borderTopWidth="1px"
+              borderColor="whiteAlpha.300"
+            >
+              <Text color="whiteAlpha.900" fontSize="xs" lineHeight="1.6">
+                {LEGAL_NAME}
+              </Text>
+              <Text color="whiteAlpha.700" fontSize="xs" mt={1}>
+                RC {RC_NUMBER}
+              </Text>
+            </Box>
 
             {SOCIALS.length > 0 && (
               <Flex gap={3} mt={6}>

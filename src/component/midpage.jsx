@@ -1,6 +1,13 @@
 import { Box, Flex, Text, Icon } from "@chakra-ui/react";
 import bgImage from "../assets/building.webp";
 import { FaCalendar, FaHandshake, FaTasks, FaUsers } from "react-icons/fa";
+import { yearsInIndustryLabel } from "../config/contact";
+
+/* TODO(owner): the three figures other than the years count have no source in
+ * the company profile document, and "50+ Skilled Workers" sits awkwardly beside
+ * the document's stated team size of 17 personnel. Confirm all three - or drop
+ * the ones that cannot be stood behind. A visitor cannot check them, but a
+ * client who has worked with the company can. */
 export default function MidPage() {
   return (
     <Box
@@ -75,7 +82,7 @@ export default function MidPage() {
                 color="whiteAlpha.900"
                 fontWeight="bold"
               >
-                10+
+                {yearsInIndustryLabel()}
               </Text>
               <Icon
                 as={FaCalendar}

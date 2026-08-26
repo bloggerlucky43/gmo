@@ -14,6 +14,7 @@ import ProjectsSection from "../component/ProjectsSection";
 import EquipmentSection from "../component/EquipmentSection";
 import AwardsSection from "../component/AwardsSection";
 import QuoteSection from "../component/QuoteSection";
+import MissionVision from "../component/MissionVision";
 
 const Landing = () => {
   return (
@@ -22,6 +23,7 @@ const Landing = () => {
         <NavBar />
         <Carousel />
         <AboutSection />
+        <MissionVision bg="gray.50" />
         <CeoSection />
         {/* Sectors early on, so a visitor can spot their own industry fast. */}
         <IndustriesSection />

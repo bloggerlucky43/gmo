@@ -13,10 +13,17 @@ import {
   FaHardHat,
   FaQuoteLeft,
   FaSeedling,
-  FaUserCheck,
+  FaTools,
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import logoMark from "../assets/gmologobg.png";
+import {
+  COMPANY_NAME,
+  LEGAL_NAME,
+  SLOGAN,
+  yearsInIndustryLabel,
+} from "../config/contact";
+import SectionHeading from "./SectionHeading";
 import "./stylings/CeoSection.css";
 
 /*  ============================================================
@@ -24,57 +31,76 @@ import "./stylings/CeoSection.css";
  *  ============================================================
  *  TODO(content): the name and job title below are the client's own - they
  *  came from the block that used to sit at the bottom of AboutSection. The
- *  letter, the tenure figure and the three principles are DRAFT copy written
- *  to fit this layout. They are words put in the mouth of a named, real
- *  person, so Mr. Osieku needs to read and approve them (ideally in writing)
- *  before publish.
+ *  letter and the three principles are DRAFT copy written to fit this layout.
+ *  They are words put in the mouth of a named, real person, so Mr. Oshieku
+ *  needs to read and approve them (ideally in writing) before publish.
  *
  *  The draft is deliberately free of anything a visitor could check and find
  *  false: no invented certifications, award names, client names, degrees or
- *  dates. The "10+" figure is the one already published in midpage.jsx, not a
- *  new claim. If he wants harder credentials in here, get them from him
- *  rather than filling the gap.
+ *  dates. The tenure figure is now derived from the 2005 founding date in the
+ *  company profile document. If he wants harder credentials in here, get them
+ *  from him rather than filling the gap.
  *
- *  TODO(asset): there is no photograph of the CEO in src/assets. The portrait
- *  panel therefore renders a designed monogram instead of the stock hard-hat
- *  model that previously sat under his name - presenting a stock photo as a
- *  named executive is worse than showing no photo. To swap in the real one:
- *  drop the file in src/assets, uncomment the import below, and point
- *  CEO.photo at it. The layout is built for both cases.
+ *  TODO(owner): the profile document spells the surname "Oshieku" (which the
+ *  oshiektech4@ address agrees with); this component had been publishing
+ *  "Osieku", with no h. Confirm the spelling of his own name before publish -
+ *  it is the one error on the page nobody will forgive.
+ *
+ *  The portrait is the founder's own photograph, cropped from
+ *  src/assets/ceo/. Two are prepared:
+ *
+ *    ceo-portrait.webp        on site in full PPE, cement plant behind him.
+ *                             Used. It is the only one that shows the work,
+ *                             and it lines up with the LafargeHolcim record
+ *                             cited in the letter.
+ *    ceo-portrait-posed.webp  posed head-and-torso against rock. Swap the
+ *                             import if a conventional portrait is wanted.
+ *
+ *  Both are cropped off phone-camera originals, so they top out around 650px
+ *  wide - fine at the size rendered here, but do not scale the panel up much
+ *  without a better source. If a proper studio portrait is ever taken, drop it
+ *  in and point the import at it; the layout also still handles photo: null by
+ *  falling back to a designed monogram panel.
  *  ============================================================ */
 
-// import ceoPhoto from "../assets/ceo.webp";
+import ceoPhoto from "../assets/ceo/ceo-portrait.webp";
 
 const CEO = {
   honorific: "Mr.",
-  name: "Godfrey Osieku",
+  name: "Godfrey M. Oshieku",
   role: "Founder & Chief Executive Officer",
-  photo: null, // -> ceoPhoto once a real portrait exists
-  tenureValue: "10+",
+  photo: ceoPhoto,
+  // Cover-crops on a box whose aspect changes with the viewport, so bias the
+  // framing upward - his face sits in the top third of the crop.
+  photoPosition: "center 22%",
+  tenureValue: yearsInIndustryLabel(),
   tenureLabel: "Years in industry",
-  lead: "Industry does not run on promises. It runs on people who show up, do the work properly, and leave the site safer than they found it.",
+  lead: `${SLOGAN} is not a line we picked for a brochure. It is what a contractor working out of Ewekoro has had to do since 2005 - with the work, with the standard, and with what people assume we are capable of.`,
   letter: [
-    "I built Gmoshiektech around that idea. Too many plants in this region are asked to choose between moving fast and holding a standard, and I have never accepted that trade-off. So we made the unglamorous investments instead: technicians certified before they are deployed, equipment serviced and logged before it leaves our yard, and supervisors who pick up the phone at 6am on a Sunday.",
-    "That is the whole offer. Whether the scope is an electrical retrofit, a post-shutdown deep clean, a crew of forty on site inside two weeks, or access roads kept clear through the wet season, the standard does not move with the size of the job.",
-    "If our crews are on your site, you have my word behind them. I would rather lose a contract than deliver one badly.",
+    `I registered ${LEGAL_NAME} to do the technical work that keeps plants running: electrical and mechanical installation, civil jobs, shutdown support, vegetation control and the rehabilitation of mining ground. ${yearsInIndustryLabel()} years on, the scope has widened but the test has not changed. Does the plant come back up on schedule, and does it come back up safely?`,
+    "Our shutdown services, periodic stock audit and vegetation control for LafargeHolcim Africa Plc is the record I would point a new client to. Not because it was the largest contract, but because shutdown work is unforgiving. You are given a window; either you hand the plant back inside it, or you have cost your client production.",
+    "We are a lean core team, backed by skilled and unskilled labour we mobilise to the size of the job. That is deliberate. It means the people on your site answer to us, and it means when you call this company you are never far from me.",
   ],
 };
 
+/* Drawn from the "Why Choose Us" list in the company profile document rather
+ * than written fresh, so the claims here match what the company already puts
+ * in front of clients on paper. */
 const PRINCIPLES = [
   {
     icon: FaHardHat,
-    title: "Safety is the first deliverable",
-    desc: "A job delivered on time but unsafely is a job we failed. Our crews work to international standards, or they do not work.",
+    title: "Safety and quality, not one or the other",
+    desc: "A strong commitment to safety and quality standards on every site we enter. A job delivered on time but unsafely is a job we failed.",
   },
   {
-    icon: FaUserCheck,
-    title: "Certified hands, maintained plant",
-    desc: "Every technician is certified before deployment. Every machine we hire out is serviced, logged and inspected first.",
+    icon: FaTools,
+    title: "Built for the shutdown window",
+    desc: "Reliable support for industrial shutdown operations - planned to the window you set, staffed properly, and handed back when we said we would.",
   },
   {
     icon: FaSeedling,
-    title: "Leave the site better",
-    desc: "Vegetation, water and land management done so the ground still works ten years after our crews have gone.",
+    title: "Ground left fit for use",
+    desc: "Rehabilitation of mining areas, vegetation control, pond and lake management and tree planting, so the land still works long after our crews have gone.",
   },
 ];
 
@@ -94,7 +120,7 @@ export default function CeoSection() {
     <Box
       as="section"
       id="leadership"
-      aria-labelledby="ceo-heading"
+      aria-label="Message from the founder"
       w="100%"
       position="relative"
       overflow="hidden"
@@ -116,38 +142,13 @@ export default function CeoSection() {
       <Box
         position="relative"
         w={{ base: "90%", md: "85%", lg: "70%" }}
-        maxW="1200px"
         mx="auto"
       >
-        {/* ---------- Section header ---------- */}
-        <Box maxW="680px" mb={{ base: 12, md: 16 }} data-aos="fade-up">
-          <Flex align="center" gap={3} mb={4}>
-            <Box h="2px" w="34px" bg="orange.500" />
-            <Text
-              fontSize="xs"
-              fontWeight="bold"
-              letterSpacing="widest"
-              textTransform="uppercase"
-              color="orange.500"
-            >
-              Leadership
-            </Text>
-          </Flex>
-          <Heading
-            as="h2"
-            id="ceo-heading"
-            fontSize={{ base: "2xl", md: "4xl" }}
-            color="primary.500"
-            lineHeight="1.2"
-            mb={4}
-          >
-            From the founder&rsquo;s desk
-          </Heading>
-          <Text color="gray.600" fontSize={{ base: "sm", md: "md" }}>
-            Gmoshiektech was built by an operator, not an office. This is the
-            standard we hold ourselves to, in his own words.
-          </Text>
-        </Box>
+        <SectionHeading
+          eyebrow="Leadership"
+          title="From the founder's desk"
+          subtitle={`${COMPANY_NAME} was built by an operator, not an office. This is the standard we hold ourselves to, in his own words.`}
+        />
 
         {/* ---------- Portrait + letter ---------- */}
         <Flex
@@ -189,7 +190,7 @@ export default function CeoSection() {
                 <>
                   <Image
                     src={CEO.photo}
-                    alt={`${CEO.honorific} ${CEO.name}, ${CEO.role} of Gmoshiektech`}
+                    alt={`${CEO.honorific} ${CEO.name}, ${CEO.role} of ${COMPANY_NAME}`}
                     w="100%"
                     h="100%"
                     objectFit="cover"
@@ -251,7 +252,7 @@ export default function CeoSection() {
                       color="whiteAlpha.700"
                       textAlign="center"
                     >
-                      Gmoshiektech &middot; Founder
+                      {COMPANY_NAME} &middot; Founder
                     </Text>
                   </Flex>
                 </>
@@ -426,7 +427,7 @@ export default function CeoSection() {
                   {CEO.honorific} {CEO.name}
                 </Text>
                 <Text fontSize="xs" color="gray.600" mt={1}>
-                  {CEO.role}, Gmoshiektech
+                  {CEO.role}, {COMPANY_NAME}
                 </Text>
               </Box>
 
@@ -453,7 +454,12 @@ export default function CeoSection() {
                   onClick={() => navigate("/services")}
                 >
                   What we do
-                  <Icon as={FaArrowRight} aria-hidden="true" boxSize={3} />
+                  <Icon
+                    as={FaArrowRight}
+                    aria-hidden="true"
+                    boxSize={3}
+                    ml={2}
+                  />
                 </Button>
               </Flex>
             </Flex>

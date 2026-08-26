@@ -6,6 +6,47 @@ import about4 from "../assets/about4.webp";
 import about5 from "../assets/about5.webp";
 import about6 from "../assets/about6.webp";
 import ServiceCard from "./servicecard";
+import { FOUNDED_YEAR, yearsInIndustry } from "../config/contact";
+
+/*  All five reasons from the profile document's own "Why Choose Us" list, plus
+ *  the comprehensive-solutions point the wide service range genuinely supports.
+ *
+ *  Dropped from the previous version: "Cost Effective & Reliable", "Client-Focused
+ *  Approach" and "Sustainability Driven" - all invented, and all displacing the
+ *  document's actual selling points. The strongest of them (experience, timely
+ *  execution, shutdown support) had been left off the site entirely. */
+const REASONS = [
+  {
+    src: about1,
+    title: `Over ${yearsInIndustry()} years of industry experience`,
+    desc: `Established in ${FOUNDED_YEAR}, we have spent two decades delivering technical and contracting work across Nigerian industry.`,
+  },
+  {
+    src: about2,
+    title: "Skilled and dedicated workforce",
+    desc: "Certified engineers, tradesmen and operatives who know industrial sites, and who are screened before they are deployed to yours.",
+  },
+  {
+    src: about3,
+    title: "Professional and timely project execution",
+    desc: "Scopes planned around your operating windows and delivered to the date agreed, not the date it becomes convenient.",
+  },
+  {
+    src: about4,
+    title: "Commitment to safety and quality standards",
+    desc: "We work to recognised safety and quality standards on every site, because a job delivered unsafely is a job we failed.",
+  },
+  {
+    src: about5,
+    title: "Reliable support for shutdown operations",
+    desc: "Planned and emergency shutdown crews mobilised at short notice, with the discipline to bring the plant back up on schedule.",
+  },
+  {
+    src: about6,
+    title: "Comprehensive solutions",
+    desc: "Electrical, mechanical, civil, labour supply and environmental work under one contract - one point of responsibility instead of five.",
+  },
+];
 
 const ChooseUs = () => {
   return (
@@ -34,36 +75,14 @@ const ChooseUs = () => {
         columns={{ base: 1, md: 2, lg: 3 }}
         mt={{ base: 5, md: 10 }}
       >
-        <ServiceCard
-          src={about1}
-          title="Expertise you can trust"
-          desc="Our team of certified engineers and technicians brings years of exprerience in industrial electrical,mechanical, and environmental services"
-        />
-        <ServiceCard
-          src={about2}
-          title="Comprehensive Solutions"
-          desc="From manpower supply to cleaning,vegetation control, and installations, we offer a one-stop solution for all your industrial needs"
-        />
-        <ServiceCard
-          src={about3}
-          title="Commitment to Safety & Compliance"
-          desc="We follow international safety standards and best practices to ensure safe and efficient operations"
-        />
-        <ServiceCard
-          src={about4}
-          title="Cost Effective & Reliable"
-          desc="Our services are designed to save you time and resources without compromising on quality"
-        />
-        <ServiceCard
-          src={about5}
-          title="Sustainability Driven"
-          desc="We integrate eco-friendly methods in our vegetation,water sanitation, and landscaping projects to protect the environment."
-        />
-        <ServiceCard
-          src={about6}
-          title="Client-Focused Approach"
-          desc="Every project is tailored to your specific needs, ensuring you get solutions that truly work for your industry."
-        />
+        {REASONS.map((reason) => (
+          <ServiceCard
+            key={reason.title}
+            src={reason.src}
+            title={reason.title}
+            desc={reason.desc}
+          />
+        ))}
       </SimpleGrid>
     </Flex>
   );

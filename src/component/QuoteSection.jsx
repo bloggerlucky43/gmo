@@ -12,19 +12,7 @@ import {
 import { FaWhatsapp, FaEnvelope, FaCheckCircle } from "react-icons/fa";
 import SectionHeading from "./SectionHeading";
 import { whatsappHref, mailtoHref, PHONES, telHref } from "../config/contact";
-
-const SERVICES = [
-  "Industrial Electrical & Mechanical Installation",
-  "Workforce Resourcing & Outsourcing",
-  "Skilled Labour Recruitment",
-  "Equipment / Plant Rental",
-  "Industrial Cleaning",
-  "Mining Area Vegetation Clearance",
-  "Water Treatment & Sanitation",
-  "Land Scraping & Site Preparation",
-  "Landscaping",
-  "Other / Not sure yet",
-];
+import { SERVICE_OPTIONS } from "../config/services";
 
 const REASSURANCES = [
   "Response within one working day",
@@ -231,7 +219,7 @@ export default function QuoteSection({ bg = "gray.50", showHeading = true }) {
                     }}
                   >
                     <option value="">Select a service...</option>
-                    {SERVICES.map((service) => (
+                    {SERVICE_OPTIONS.map((service) => (
                       <option key={service} value={service}>
                         {service}
                       </option>

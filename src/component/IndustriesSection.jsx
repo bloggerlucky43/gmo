@@ -3,21 +3,26 @@ import {
   FaIndustry,
   FaMountain,
   FaHardHat,
-  FaWarehouse,
-  FaUtensils,
-  FaBolt,
+  FaOilCan,
+  FaCogs,
+  FaHome,
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import SectionHeading from "./SectionHeading";
 
-/*  TODO(content): confirm these are the sectors GMO actually serves, and
- *  reorder them so the strongest sectors come first. Remove any the company
- *  has not genuinely worked in. */
+/*  These are the "target customers" named in the company profile document
+ *  (src/assets), in the document's own order, plus Construction & Civil - which
+ *  the document supports through its "Civil Engineering Jobs" service.
+ *
+ *  Removed in the process: Warehousing & Logistics, Food & Beverage Processing
+ *  and Power & Utilities. Those were placeholder sectors with no backing in the
+ *  document. If the company has genuinely worked in them, add them back with the
+ *  services line filled in from real jobs. */
 const INDUSTRIES = [
   {
-    name: "Mining & Quarrying",
-    icon: FaMountain,
-    services: "Vegetation clearance, haul road maintenance, site preparation",
+    name: "Oil & Gas",
+    icon: FaOilCan,
+    services: "Shutdown support, mechanical fitting, adhoc industrial services",
   },
   {
     name: "Manufacturing",
@@ -25,24 +30,24 @@ const INDUSTRIES = [
     services: "Electrical & mechanical installation, plant maintenance",
   },
   {
+    name: "Mining & Quarrying",
+    icon: FaMountain,
+    services: "Area rehabilitation, vegetation control, site preparation",
+  },
+  {
+    name: "Industrial Facilities",
+    icon: FaCogs,
+    services: "General contracting, skilled labour supply, shutdown crews",
+  },
+  {
     name: "Construction & Civil",
     icon: FaHardHat,
-    services: "Equipment rental, land scraping, skilled labour supply",
+    services: "Civil engineering works, land clearing, equipment and operators",
   },
   {
-    name: "Warehousing & Logistics",
-    icon: FaWarehouse,
-    services: "Industrial cleaning, facility maintenance",
-  },
-  {
-    name: "Food & Beverage Processing",
-    icon: FaUtensils,
-    services: "Water treatment, sanitation, hygiene-critical cleaning",
-  },
-  {
-    name: "Power & Utilities",
-    icon: FaBolt,
-    services: "Electrical installation, switchgear, workforce resourcing",
+    name: "Residential & Home Clients",
+    icon: FaHome,
+    services: "Electrical work, landscaping, pond and lake management",
   },
 ];
 

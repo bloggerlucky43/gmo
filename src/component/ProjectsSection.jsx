@@ -10,11 +10,22 @@ import heavy from "../assets/heavy.webp";
 import intmin from "../assets/intmin.webp";
 import interior from "../assets/interior.webp";
 import warehouse from "../assets/warehouse.webp";
+import eng from "../assets/eng.webp";
 
 /*  ============================================================
- *  PLACEHOLDER CONTENT
+ *  ONE REAL ENTRY, FIVE PLACEHOLDERS
  *  ============================================================
- *  TODO(content): replace each entry with a real completed project.
+ *  The first entry is real: it is the "Key Achievement" recorded in the company
+ *  profile document (src/assets). Everything after it is still invented.
+ *
+ *  TODO(owner): LafargeHolcim is named because the company names them in its own
+ *  profile document - but a profile deck shown to a few buyers is not the same as
+ *  publishing a client's name on the open web. Get written permission from them
+ *  before this goes live. If permission is refused, change `client` to "A
+ *  multinational cement producer, Nigeria" and clear `clientNamed` - the entry
+ *  keeps all of its value without the name.
+ *
+ *  TODO(content): replace entries 2-6 with real completed projects.
  *
  *  `image`  - currently reuses existing site photography as a stand-in.
  *             Swap for a real photo of the job.
@@ -23,11 +34,22 @@ import warehouse from "../assets/warehouse.webp";
  *             automatically.
  *  `gallery`- number of extra photos you have for this job. Leave 0 until
  *             you add them; the badge only shows when it is above 0.
- *
- *  Client names: use the real company only with written permission,
- *  otherwise describe it generically ("a cement producer in Ogun State").
  *  ============================================================ */
 const PROJECTS = [
+  {
+    title: "Shutdown, Stock Audit & Vegetation Control",
+    client: "LafargeHolcim Africa Plc",
+    clientNamed: true,
+    sector: "Manufacturing",
+    scope:
+      "Delivered industrial shutdown services, periodic stock audits and vegetation control for a multinational cement producer, executed with professionalism, efficiency and on-time completion.",
+    duration: "Multi-scope contract",
+    crew: "Shutdown, audit & vegetation teams",
+    outcome: "Delivered on time, every scope",
+    image: eng,
+    video: "",
+    gallery: 0,
+  },
   {
     title: "Plant-wide Electrical Retrofit",
     client: "Cement producer, Ogun State",

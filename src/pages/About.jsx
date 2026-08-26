@@ -6,6 +6,7 @@ import ChooseUs from "../component/ChooseUs";
 import AboutComponent from "../component/AboutComponent";
 import CallToAction from "../component/CalltoAction";
 import CeoSection from "../component/CeoSection";
+import MissionVision from "../component/MissionVision";
 const About = () => {
   return (
     <Box>
@@ -14,6 +15,7 @@ const About = () => {
         <AboutComponent />
 
         <AboutSection />
+        <MissionVision bg="gray.50" />
         <CeoSection />
         <CallToAction />
         <ChooseUs />
