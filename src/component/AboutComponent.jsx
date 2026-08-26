@@ -50,9 +50,9 @@ const AboutComponent = () => {
               maxW="600px"
             >
               Our journey is defined by precision, safety, and client
-              satisfaction. From industrial installations to workforce
-              resourcing, sanitation, and landscaping, we go beyond services to
-              build long-term partnerships that power progress
+              satisfaction. From industrial installations to shutdown support,
+              labour supply, and mining area rehabilitation, we go beyond
+              services to build long-term partnerships that power progress
             </Text>
           </Flex>
         </Box>

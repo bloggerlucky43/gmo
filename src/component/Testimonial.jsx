@@ -56,21 +56,21 @@ const testimonials = [
   },
   {
     quote:
-      "Our water treatment compliance had been flagged twice before we brought them in. We have passed every inspection since, and they gave us the documentation to prove it.",
+      "Their crew rehabilitated ground we had written off after the pit closed. Two seasons on it is still holding, which is more than we expected when we signed.",
     name: "Placeholder Name",
     role: "HSE Manager",
-    company: "Sample Processing Ltd.",
-    sector: "Food Processing",
-    project: "Water treatment & sanitation - 12 months",
+    company: "Sample Quarry Ltd.",
+    sector: "Mining",
+    project: "Mining area rehabilitation - 12 months",
   },
   {
     quote:
-      "Post-shutdown cleaning of the warehouse and machine hall used to take us a week of lost output. Their crew turned it around over a weekend and left the floors better than we found them.",
+      "We gave them a shutdown window and they handed the plant back inside it. That sounds like the minimum until you have worked with contractors who cannot do it.",
     name: "Placeholder Name",
     role: "Facility Director",
-    company: "Sample Logistics Co.",
-    sector: "Warehousing",
-    project: "Industrial deep clean - biannual",
+    company: "Sample Industrial Co.",
+    sector: "Industrial",
+    project: "Planned shutdown support - biannual",
   },
 ];
 

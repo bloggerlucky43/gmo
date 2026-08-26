@@ -51,9 +51,9 @@ export const ServicePageComponent = () => {
               mb={6}
               maxW="600px"
             >
-              From electrical and mechanical installations to labour recruiting,
-              equipment rentals, cleaning, and environmental services, we
-              provide complete, reliable, and innovative solutions that keep
+              From electrical and mechanical installations to civil engineering,
+              shutdown support, labour supply, equipment rental and mining area
+              rehabilitation, we provide complete, reliable solutions that keep
               your operations running smoothly.
             </Text>
 

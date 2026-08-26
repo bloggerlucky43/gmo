@@ -17,6 +17,7 @@ import {
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import logoMark from "../assets/gmologobg.png";
+import ceoPhoto from "../assets/ceo/ceo-portrait.webp";
 import {
   COMPANY_NAME,
   LEGAL_NAME,
@@ -29,17 +30,19 @@ import "./stylings/CeoSection.css";
 /*  ============================================================
  *  NEEDS THE CEO'S SIGN-OFF BEFORE THIS GOES LIVE
  *  ============================================================
- *  TODO(content): the name and job title below are the client's own - they
- *  came from the block that used to sit at the bottom of AboutSection. The
- *  letter and the three principles are DRAFT copy written to fit this layout.
- *  They are words put in the mouth of a named, real person, so Mr. Oshieku
- *  needs to read and approve them (ideally in writing) before publish.
+ *  TODO(content): every factual claim in the letter below is taken from the
+ *  company profile document in src/assets - the 2005 founding date, the
+ *  service list, the "Breaking Limits" vision, the lean core team, and the
+ *  LafargeHolcim Africa Plc shutdown / stock audit / vegetation control
+ *  engagement listed there as the company's key achievement. Nothing is
+ *  invented: no certifications, awards, degrees or client names beyond that
+ *  one, and no numbers the company does not already publish.
  *
- *  The draft is deliberately free of anything a visitor could check and find
- *  false: no invented certifications, award names, client names, degrees or
- *  dates. The tenure figure is now derived from the 2005 founding date in the
- *  company profile document. If he wants harder credentials in here, get them
- *  from him rather than filling the gap.
+ *  The VOICE, though, is drafted - these are first-person words put in the
+ *  mouth of a named, real person. Mr. Oshieku needs to read and approve them
+ *  (ideally in writing) before publish, and the LafargeHolcim mention should
+ *  be checked against whatever the contract says about using their name in
+ *  marketing.
  *
  *  TODO(owner): the profile document spells the surname "Oshieku" (which the
  *  oshiektech4@ address agrees with); this component had been publishing
@@ -62,8 +65,6 @@ import "./stylings/CeoSection.css";
  *  in and point the import at it; the layout also still handles photo: null by
  *  falling back to a designed monogram panel.
  *  ============================================================ */
-
-import ceoPhoto from "../assets/ceo/ceo-portrait.webp";
 
 const CEO = {
   honorific: "Mr.",
@@ -158,10 +159,17 @@ export default function CeoSection() {
         >
           {/* Portrait column */}
           <Box
-            w={{ base: "100%", lg: "38%" }}
+            /* Capped at md: the photo is a 648x884 portrait, so letting this
+             * column run the full single-column width would cover-crop it to a
+             * letterbox band and cut his face off. */
+            w={{ base: "100%", md: "460px", lg: "38%" }}
+            maxW="100%"
+            mx={{ base: 0, md: "auto", lg: 0 }}
             flexShrink={0}
             position="relative"
-            pb="46px" /* room for the credential card hanging off the bottom */
+            /* Below lg the credential card hangs off the bottom edge and needs
+             * reserved space; at lg it moves inside the photo, so drop it. */
+            pb={{ base: "46px", lg: 0 }}
             data-aos="fade-up"
           >
             {/* Offset frame behind the portrait - editorial depth */}
@@ -172,7 +180,9 @@ export default function CeoSection() {
               top="20px"
               left="20px"
               w="100%"
-              h="calc(100% - 46px)"
+              /* Match the photo box, not the column: below lg the column is
+               * taller than the photo by the card's reserved space. */
+              h={{ md: "calc(100% - 46px)", lg: "100%" }}
               borderWidth="2px"
               borderColor="orange.400"
               rounded="2xl"
@@ -180,7 +190,7 @@ export default function CeoSection() {
 
             <Box
               position="relative"
-              h={{ base: "360px", md: "480px", lg: "520px" }}
+              h={{ base: "360px", md: "540px", lg: "520px" }}
               rounded="2xl"
               overflow="hidden"
               boxShadow="2xl"
@@ -194,14 +204,16 @@ export default function CeoSection() {
                     w="100%"
                     h="100%"
                     objectFit="cover"
-                    objectPosition="center top"
+                    objectPosition={CEO.photoPosition}
                   />
-                  {/* Scrim keeps the corner brackets readable over any photo */}
+                  {/* Scrim does two jobs: keeps the corner brackets readable
+                      over any photo, and at lg gives the credential card a
+                      graded ground to sit on instead of bare photo. */}
                   <Box
                     aria-hidden="true"
                     position="absolute"
                     inset="0"
-                    bgImage="linear-gradient(to top, rgba(4,26,54,0.55), transparent 45%)"
+                    bgImage="linear-gradient(to top, rgba(4,26,54,0.72), rgba(4,26,54,0.35) 28%, transparent 58%)"
                   />
                 </>
               ) : (
@@ -273,7 +285,10 @@ export default function CeoSection() {
               <Box
                 aria-hidden="true"
                 position="absolute"
-                bottom="18px"
+                /* At lg the credential card occupies the bottom of the photo,
+                 * so this crop mark lifts clear of it. 120px clears the card
+                 * at its tallest (role wrapping to two lines). */
+                bottom={{ base: "18px", lg: "120px" }}
                 right="18px"
                 boxSize="42px"
                 borderBottomWidth="3px"
@@ -285,15 +300,16 @@ export default function CeoSection() {
               <Box aria-hidden="true" className="ceo-portrait__sheen" />
             </Box>
 
-            {/* Credential card, overlapping the portrait */}
+            {/* Credential card. Below lg it hangs off the bottom edge of the
+                portrait; at lg it sits inset inside the photo, over the scrim. */}
             <Flex
               position="absolute"
-              bottom="0"
-              left={{ base: "5%", lg: "-24px" }}
-              right={{ base: "5%", lg: "36px" }}
+              bottom={{ base: "0", lg: "18px" }}
+              left={{ base: "5%", lg: "18px" }}
+              right={{ base: "5%", lg: "18px" }}
               bg="white"
               rounded="xl"
-              boxShadow="lg"
+              boxShadow={{ base: "lg", lg: "xl" }}
               borderWidth="1px"
               borderColor="gray.200"
               borderLeftWidth="3px"

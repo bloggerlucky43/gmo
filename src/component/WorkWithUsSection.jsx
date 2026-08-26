@@ -21,15 +21,16 @@ import SectionHeading from "./SectionHeading";
 import { whatsappHref, mailtoHref } from "../config/contact";
 
 /* TODO(content): confirm these are the trades GMO actually recruits for, and
- * add or remove as hiring needs change. */
+ * add or remove as hiring needs change. "Industrial Cleaner" was dropped when
+ * industrial cleaning came off the service list. */
 const TRADES = [
   "Industrial Electrician",
   "Mechanical Fitter",
   "Plant / Machine Operator",
   "Welder / Fabricator",
-  "Industrial Cleaner",
   "Site Labourer",
   "Scaffolder",
+  "Groundworker / Landscaper",
   "HSE Officer",
   "Site Supervisor",
   "Other / General",

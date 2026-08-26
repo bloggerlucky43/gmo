@@ -23,6 +23,7 @@ import {
   mapsHref,
   whatsappHref,
 } from "../config/contact";
+import { SERVICE_NAMES } from "../config/services";
 
 const whatsappLink = whatsappHref();
 
@@ -48,18 +49,9 @@ const COMPANY_LINKS = [
   { label: "Contact", to: "/contact" },
 ];
 
-const SERVICE_LINKS = [
-  "Electrical Installation & Maintenance",
-  "Mechanical Fabrication & Fittings",
-  "Civil Engineering Jobs",
-  "Shutdown Services",
-  "General Contracting",
-  "Skilled & Unskilled Labour Supply",
-  "Mining Area Rehabilitation",
-  "Vegetation Control & Tree Planting",
-  "Pond & Lake Management",
-  "Landscaping & Site Preparation",
-];
+/* Derived from src/config/services.js so the footer can never list a service the
+ * company has stopped offering, or miss one it has added. */
+const SERVICE_LINKS = SERVICE_NAMES;
 
 /* Shared link styling so hover and keyboard focus behave consistently. */
 const linkStyles = {

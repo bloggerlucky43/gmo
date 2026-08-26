@@ -1,14 +1,20 @@
 /* ------------------------------------------------------------------
  * Single source of truth for what the company offers.
  *
- * The first twelve entries are the "Our Services" list from the company
- * profile document in src/assets, in the document's own order. The last three
- * are on the site but absent from that document - `documented: false` marks
- * them for the content review rather than changing anything on screen.
+ * The first twelve entries are the "Our Services" list from the company profile
+ * document in src/assets, in the document's own order.
+ *
+ * Equipment rental is the one entry not in that document. It is kept on the
+ * owner's instruction - the company does hire plant out, and the site has a
+ * whole /equipment page for it, so the document's list is incomplete rather
+ * than the site being wrong. `documented: false` records that distinction.
+ *
+ * Removed on the owner's instruction, having had no backing in the document:
+ * "Industrial Cleaning Services" and "Water Treatment & Sanitation".
  *
  * Everything that shows a service list reads from here: the services grid, the
- * quote form dropdown and the contact form dropdown. Add a service once and it
- * appears in all three.
+ * footer, the quote form dropdown and the contact form dropdown. Add a service
+ * once and it appears in all of them.
  * ------------------------------------------------------------------ */
 
 export const SERVICES = [
@@ -25,8 +31,6 @@ export const SERVICES = [
   { name: "Pond & Lake Management Specialists", documented: true },
   { name: "Tree Planting & Maintenance", documented: true },
   { name: "Industrial Equipment Rental", documented: false },
-  { name: "Industrial Cleaning Services", documented: false },
-  { name: "Water Treatment & Sanitation", documented: false },
 ];
 
 export const SERVICE_NAMES = SERVICES.map((service) => service.name);

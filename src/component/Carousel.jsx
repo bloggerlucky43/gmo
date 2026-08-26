@@ -28,8 +28,8 @@ const slides = [
   },
   {
     src: warehouse,
-    title: "Industrial Cleaning & Site Maintenance",
-    desc: "Our industrial cleaning services go beyond the basics — we handle machinery, warehouses, and construction sites with precision and care. Combined with vegetation clearance and water sanitation, we create safe, productive environments for your workforce.",
+    title: "Shutdown Support You Can Schedule Around",
+    desc: "Planned and emergency shutdown services delivered inside the window you give us — electrical, mechanical and civil crews working to one programme. We have done it for a multinational cement producer, and the test is always the same: does the plant come back up on time, and safely?",
     cta: "Get a Quote",
   },
 ];

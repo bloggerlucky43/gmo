@@ -1,14 +1,12 @@
 import { SimpleGrid, Flex, Text, Box, Icon } from "@chakra-ui/react";
 import {
   FaBolt,
-  FaBroom,
   FaCog,
   FaFileContract,
   FaHardHat,
   FaLeaf,
   FaMountain,
   FaPowerOff,
-  FaTint,
   FaTools,
   FaTractor,
   FaTree,
@@ -98,8 +96,6 @@ const SERVICE_ICONS = {
   "Pond & Lake Management Specialists": FaWater,
   "Tree Planting & Maintenance": FaTree,
   "Industrial Equipment Rental": FaTools,
-  "Industrial Cleaning Services": FaBroom,
-  "Water Treatment & Sanitation": FaTint,
 };
 
 const ALL_SERVICES = SERVICES.map((service) => ({
