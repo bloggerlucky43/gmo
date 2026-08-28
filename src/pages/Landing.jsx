@@ -5,7 +5,6 @@ import ServicesSection from "../component/servicesection";
 import CallToAction from "../component/CalltoAction";
 import MidPage from "../component/midpage";
 import Footer from "../component/Footer";
-import Testimonials from "../component/Testimonial";
 import AboutSection from "../component/AboutSection";
 import MidPageCta from "../component/MidPageCta";
 import CeoSection from "../component/CeoSection";
@@ -33,8 +32,9 @@ const Landing = () => {
         <ProjectsSection limit={3} showViewAll bg="gray.50" />
         <MidPageCta />
         <EquipmentSection limit={2} showViewAll />
-        <Testimonials limit={3} bg="white" />
-        <AwardsSection />
+        {/* White here to keep the alternation - EquipmentSection above and
+            AwardsSection both default to gray.50. */}
+        <AwardsSection bg="white" />
         <MidPage />
         <QuoteSection bg="white" />
         <Footer />

@@ -43,7 +43,6 @@ const COMPANY_LINKS = [
   { label: "Services", to: "/services" },
   { label: "Projects", to: "/projects" },
   { label: "Equipment & Fleet", to: "/equipment" },
-  { label: "Testimonials", to: "/testimonial" },
   { label: "Work With Us", to: "/careers" },
   { label: "Request a Quote", to: "/quote" },
   { label: "Contact", to: "/contact" },
