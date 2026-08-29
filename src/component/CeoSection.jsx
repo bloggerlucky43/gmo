@@ -80,7 +80,7 @@ const CEO = {
   letter: [
     `I registered ${LEGAL_NAME} to do the technical work that keeps plants running: electrical and mechanical installation, civil jobs, shutdown support, vegetation control and the rehabilitation of mining ground. ${yearsInIndustryLabel()} years on, the scope has widened but the test has not changed. Does the plant come back up on schedule, and does it come back up safely?`,
     "Our shutdown services, periodic stock audit and vegetation control for LafargeHolcim Africa Plc is the record I would point a new client to. Not because it was the largest contract, but because shutdown work is unforgiving. You are given a window; either you hand the plant back inside it, or you have cost your client production.",
-    "We are a lean core team, backed by skilled and unskilled labour we mobilise to the size of the job. That is deliberate. It means the people on your site answer to us, and it means when you call this company you are never far from me.",
+    "We are a lean core team, backed by a dedicated workforce we mobilise to the size of the job. That is deliberate. It means the people on your site answer to us, and it means when you call this company you are never far from me.",
   ],
 };
 

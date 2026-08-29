@@ -52,7 +52,7 @@ export const ServicePageComponent = () => {
               maxW="600px"
             >
               From electrical and mechanical installations to civil engineering,
-              shutdown support, labour supply, equipment rental and mining area
+              shutdown support, equipment rental and mining area
               rehabilitation, we provide complete, reliable solutions that keep
               your operations running smoothly.
             </Text>

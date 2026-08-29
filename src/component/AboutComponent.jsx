@@ -51,7 +51,7 @@ const AboutComponent = () => {
             >
               Our journey is defined by precision, safety, and client
               satisfaction. From industrial installations to shutdown support,
-              labour supply, and mining area rehabilitation, we go beyond
+              and mining area rehabilitation, we go beyond
               services to build long-term partnerships that power progress
             </Text>
           </Flex>

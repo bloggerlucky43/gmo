@@ -22,7 +22,6 @@ import building from "../assets/building.webp";
 import clothing from "../assets/clothing.webp";
 import photo from "../assets/photo.webp";
 import heavy from "../assets/heavy.webp";
-import labour from "../assets/labour.webp";
 import excavator from "../assets/excavator.webp";
 
 /*  The eight photo cards are the headline services, all of them named in the
@@ -68,11 +67,6 @@ const HEADLINE_SERVICES = [
     desc: "Land clearing, grading and site preparation ahead of industrial, construction or mining works.",
   },
   {
-    src: labour,
-    title: "Skilled & Unskilled Labour Supply",
-    desc: "Supply of both skilled tradesmen and general operatives, screened and deployed to the headcount your project needs.",
-  },
-  {
     src: excavator,
     title: "General Contracting Services",
     desc: "Full general contracting, taking single-point responsibility for multi-trade scopes from mobilisation to handover.",
@@ -92,7 +86,6 @@ const SERVICE_ICONS = {
   "Adhoc Industrial Services": FaCog,
   "Landscaping & Site Preparation": FaTractor,
   "General Contracting Services": FaFileContract,
-  "Supply of Skilled & Unskilled Labour": FaUsers,
   "Pond & Lake Management Specialists": FaWater,
   "Tree Planting & Maintenance": FaTree,
   "Industrial Equipment Rental": FaTools,

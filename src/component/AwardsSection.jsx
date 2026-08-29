@@ -19,7 +19,6 @@ import hseLevel1 from "../assets/award/hse-level-1.webp";
 import solarPv from "../assets/award/solar-pv-installation.webp";
 import cacIncorporation from "../assets/award/cac-incorporation.webp";
 import vatRegistration from "../assets/award/vat-registration.webp";
-import employersPermit from "../assets/award/employers-permit.webp";
 
 /*  ============================================================
  *  REAL CONTENT - transcribed from the scanned documents in
@@ -31,9 +30,6 @@ import employersPermit from "../assets/award/employers-permit.webp";
  *  1. The ISO 9001:2015 entry is a PERSONNEL certificate - lead
  *     auditor training held by the MD. It is not a company-level
  *     ISO 9001 certification, and the copy must not imply one.
- *  2. TODO(owner): the Employer's Permit was issued 7 Apr 2022 with
- *     a two-year term, so it has lapsed. Swap in the renewal scan
- *     and update `year` when it is available, or drop the entry.
  *  ============================================================ */
 const CERTIFICATES = [
   {
@@ -98,15 +94,6 @@ const CERTIFICATES = [
     note: "Registered agent for VAT collection. VAT no. OTV100026363308.",
     icon: FaFileInvoiceDollar,
     image: vatRegistration,
-  },
-  {
-    title: "Employer's Permit / Recruiter's Licence",
-    issuer: "Federal Ministry of Employment, Labour & Productivity",
-    year: "2022",
-    holder: "Godfrey M. Oshieku Technical Nigeria Limited",
-    note: "Labour contractor licence for the public and private sector, issued on a two-year term.",
-    icon: FaIdCard,
-    image: employersPermit,
   },
 ];
 

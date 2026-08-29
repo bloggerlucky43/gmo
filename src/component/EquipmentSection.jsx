@@ -4,98 +4,78 @@ import { useNavigate } from "react-router-dom";
 import SectionHeading from "./SectionHeading";
 import { whatsappHref } from "../config/contact";
 
-/* Existing site photography stands in for real machine photos. */
-import excavator from "../assets/excavator.webp";
-import heavy from "../assets/heavy.webp";
-import building from "../assets/building.webp";
-import eng from "../assets/eng.webp";
+import imgWheelbarrows from "../assets/equipments/WhatsApp Image 2026-08-28 at 1.48.38 PM.jpeg";
+import imgLeafBlower from "../assets/equipments/WhatsApp Image 2026-08-28 at 1.49.22 PM.jpeg";
+import imgJackhammer from "../assets/equipments/WhatsApp Image 2026-08-28 at 1.50.44 PM.jpeg";
+import imgBrushCutter from "../assets/equipments/WhatsApp Image 2026-08-28 at 3.03.42 PM.jpeg";
+import imgWeldingMachine from "../assets/equipments/WhatsApp Image 2026-08-28 at 3.04.40 PM.jpeg";
 
 /*  ============================================================
- *  PLACEHOLDER CONTENT
- *  ============================================================
- *  TODO(content): replace with the real fleet. Buyers search for a specific
- *  machine, so accuracy here converts directly - list only what you can
- *  actually supply, and keep `available` honest.
- *
- *  `image`  - reuses existing site photography for now. Swap for a photo of
- *             the actual machine.
- *  `specs`  - shown as label/value rows. Add or remove freely.
- *  `available` - false renders an "On request" badge instead of "Available".
+ *  GMO FLEET & EQUIPMENT
  *  ============================================================ */
 const EQUIPMENT = [
   {
-    name: "Tracked Excavator",
-    category: "Earthmoving",
-    image: excavator,
+    name: "Inverter ARC Welding Machine",
+    category: "Welding & Fabrication",
+    image: imgWeldingMachine,
     specs: {
-      "Operating weight": "20 - 30 tonnes",
-      "Bucket capacity": "1.0 - 1.4 m³",
-      "Max dig depth": "6.5 m",
-      Operator: "Certified operator included",
+      Model: "ARC-160 Professional",
+      "Input Voltage": "220V - 240V",
+      "Duty Cycle": "60% at rated output",
+      Application: "MMA welding, site fabrication, steel repairs",
     },
     available: true,
   },
   {
-    name: "Bulldozer / Land Scraper",
-    category: "Site Preparation",
-    image: heavy,
+    name: "Demolition Hammer / Jackhammer",
+    category: "Power Tools",
+    image: imgJackhammer,
     specs: {
-      "Blade width": "3.2 m",
-      Application: "Grading, levelling, topsoil stripping",
-      "Ground pressure": "Low-ground-pressure tracks available",
-      Operator: "Certified operator included",
+      Brand: "Bosch Professional",
+      "Impact rate": "900 - 1890 bpm",
+      "Impact energy": "16.8 J",
+      Application: "Concrete breaking, demolition, chipping",
     },
     available: true,
   },
   {
-    name: "Tipper Trucks",
-    category: "Haulage",
-    image: building,
+    name: "Cordless Leaf Blower / Air Blower",
+    category: "Maintenance & Cleaning",
+    image: imgLeafBlower,
     specs: {
-      Capacity: "10 - 30 tonnes",
-      Application: "Spoil removal, aggregate haulage",
-      Availability: "Fleet hire, day or contract rate",
-      Operator: "Licensed driver included",
+      Brand: "Bosch Professional 18V",
+      Power: "Lithium-ion Battery powered",
+      "Max air speed": "270 km/h",
+      Application: "Dust clearing, site cleanup, waste management",
     },
     available: true,
   },
   {
-    name: "Industrial Cleaning Plant",
-    category: "Cleaning",
-    image: eng,
+    name: "Petrol String Trimmer / Brush Cutter",
+    category: "Landscaping",
+    image: imgBrushCutter,
     specs: {
-      Equipment: "Pressure washers, scrubbers, vacuum units",
-      Application: "Machine halls, warehouses, production floors",
-      "Crew size": "Scalable to site requirement",
-      Availability: "Scheduled or shutdown turnaround",
+      Engine: "2-Stroke Petrol Engine",
+      Displacement: "33cc - 43cc",
+      Application: "Weed cutting, grass trimming, land clearing",
+      "Safety gear": "Harness and guard included",
     },
     available: true,
   },
   {
-    name: "Generator Sets",
-    category: "Power",
-    image: eng,
+    name: "Heavy-Duty Wheelbarrows",
+    category: "Material Handling",
+    image: imgWheelbarrows,
     specs: {
-      Output: "Range available on request",
-      Application: "Site power, standby cover",
-      Fuel: "Diesel",
-      Servicing: "Maintenance included on contract hire",
+      Capacity: "80L - 100L volume",
+      Tray: "Galvanized steel / heavy-duty tray",
+      Application: "Concrete, sand, mortar, and site debris transport",
+      Availability: "Individual or bulk hire options",
     },
-    available: false,
-  },
-  {
-    name: "Access & Lifting Equipment",
-    category: "Access",
-    image: heavy,
-    specs: {
-      Equipment: "Scaffolding, hoists, lifting gear",
-      Application: "High-level installation and cleaning",
-      Certification: "Inspected and certified before dispatch",
-      Availability: "Project hire",
-    },
-    available: false,
+    available: true,
   },
 ];
+
 
 export default function EquipmentSection({
   limit,

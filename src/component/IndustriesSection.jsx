@@ -37,7 +37,7 @@ const INDUSTRIES = [
   {
     name: "Industrial Facilities",
     icon: FaCogs,
-    services: "General contracting, skilled labour supply, shutdown crews",
+    services: "General contracting, maintenance support, shutdown crews",
   },
   {
     name: "Construction & Civil",

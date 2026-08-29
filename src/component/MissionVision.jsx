@@ -1,11 +1,12 @@
 import { Box, Flex, Heading, Icon, SimpleGrid, Text } from "@chakra-ui/react";
-import { FaBullseye, FaEye, FaCalendarAlt, FaMapMarkerAlt, FaIdCard, FaBriefcase } from "react-icons/fa";
+import { FaBullseye, FaEye, FaCalendarAlt, FaMapMarkerAlt, FaIdCard, FaBriefcase, FaUsers } from "react-icons/fa";
 import {
   FOUNDED_YEAR,
   INDUSTRY,
   MISSION,
   RC_NUMBER,
   SLOGAN,
+  TEAM_SIZE,
   VISION,
 } from "../config/contact";
 import SectionHeading from "./SectionHeading";
@@ -28,14 +29,19 @@ const PILLARS = [
   },
 ];
 
-/* Team size is deliberately absent: the profile document says 17 personnel while
- * midpage.jsx publishes "50+ Skilled Workers". Until the owner confirms which
- * figure is right (17 permanent staff vs. 50+ including contract labour?),
- * publishing either here would just repeat the contradiction. */
+/* Team size is the profile document's 17 permanent personnel. It is qualified
+ * rather than left bare because the company mobilises additional workforce
+ * per job, and a tender team reading 17 next to a 250-project claim needs
+ * the reconciliation in front of them. */
 const FACTS = [
   { icon: FaCalendarAlt, label: "Established", value: String(FOUNDED_YEAR) },
   { icon: FaIdCard, label: "RC number", value: RC_NUMBER },
   { icon: FaMapMarkerAlt, label: "Base", value: "Ewekoro, Ogun State" },
+  {
+    icon: FaUsers,
+    label: "Core team",
+    value: `${TEAM_SIZE} personnel, workforce mobilised per job`,
+  },
   { icon: FaBriefcase, label: "Sector", value: INDUSTRY },
 ];
 
@@ -149,9 +155,10 @@ export default function MissionVision({ bg = "white" }) {
           </Box>
         </Flex>
 
-        {/* Verifiable company facts. */}
+        {/* Verifiable company facts. Five of them, so the column counts divide
+            evenly at every breakpoint rather than stranding a lone tile. */}
         <SimpleGrid
-          columns={{ base: 2, lg: 4 }}
+          columns={{ base: 1, sm: 2, md: 3, lg: 5 }}
           gap={{ base: 4, md: 6 }}
           mt={{ base: 8, md: 10 }}
         >

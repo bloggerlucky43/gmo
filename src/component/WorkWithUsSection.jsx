@@ -40,12 +40,12 @@ const BENEFITS = [
   {
     icon: FaHardHat,
     title: "Real site work",
-    text: "Placements on active industrial, mining and construction sites, not warehoused on a list.",
+    text: "Work on active industrial, mining and construction projects under our supervisor teams.",
   },
   {
     icon: FaClock,
-    title: "Steady placements",
-    text: "Short-term contracts and rolling assignments across a spread of clients and sectors.",
+    title: "Steady projects",
+    text: "Consistent contracts and assignments across our diverse range of active project sites.",
   },
   {
     icon: FaShieldAlt,
@@ -160,7 +160,7 @@ export default function WorkWithUsSection({ bg = "white", showHeading = true }) 
           <SectionHeading
             eyebrow="Work with us"
             title="Join our workforce"
-            subtitle="We recruit skilled tradespeople and operators for placements across industrial, mining and construction sites. If you have the trade and the paperwork, we want to hear from you."
+            subtitle="We recruit qualified tradespeople and operators for industrial, mining and construction projects. If you have the trade and the paperwork, we want to hear from you."
           />
         )}
 
@@ -353,7 +353,7 @@ export default function WorkWithUsSection({ bg = "white", showHeading = true }) 
                 bg="#25D366"
                 color="white"
                 fontSize="sm"
-                _hover={{ filter: "brightness(0.92)" }}
+                _hover={{ "@media (hover: hover)": { filter: "brightness(0.92)" } }}
                 onClick={() => submit("whatsapp")}
               >
                 <Icon as={FaWhatsapp} boxSize={5} mr={2} />
@@ -366,7 +366,7 @@ export default function WorkWithUsSection({ bg = "white", showHeading = true }) 
                 borderColor="primary.500"
                 color="primary.500"
                 fontSize="sm"
-                _hover={{ bg: "primary.500", color: "white" }}
+                _hover={{ "@media (hover: hover)": { bg: "primary.500", color: "white" } }}
                 onClick={() => submit("email")}
               >
                 <Icon as={FaEnvelope} boxSize={4} mr={2} />

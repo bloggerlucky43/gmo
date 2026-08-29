@@ -1,13 +1,16 @@
 import { Box, Flex, Text, Icon } from "@chakra-ui/react";
 import bgImage from "../assets/building.webp";
 import { FaCalendar, FaHandshake, FaTasks, FaUsers } from "react-icons/fa";
-import { yearsInIndustryLabel } from "../config/contact";
+import { TEAM_SIZE, yearsInIndustryLabel } from "../config/contact";
 
-/* TODO(owner): the three figures other than the years count have no source in
- * the company profile document, and "50+ Skilled Workers" sits awkwardly beside
- * the document's stated team size of 17 personnel. Confirm all three - or drop
- * the ones that cannot be stood behind. A visitor cannot check them, but a
- * client who has worked with the company can. */
+/* TODO(owner): "100+ Satisfied Clients" and "250+ Projects" still have no source
+ * in the company profile document. Confirm both - or drop the ones that cannot be
+ * stood behind. A visitor cannot check them, but a client who has worked with the
+ * company can.
+ *
+ * The headcount tile is settled: it publishes the profile document's 17 permanent
+ * personnel as the core team, rather than the "50+ Skilled Workers" it used to
+ * claim. See TEAM_SIZE in src/config/contact.js. */
 export default function MidPage() {
   return (
     <Box
@@ -134,7 +137,7 @@ export default function MidPage() {
                 color="whiteAlpha.900"
                 fontWeight="bold"
               >
-                50+
+                {TEAM_SIZE}
               </Text>
               <Icon
                 as={FaUsers}
@@ -143,7 +146,7 @@ export default function MidPage() {
                 ml={{ base: "30vw", md: "0" }}
               />
             </Flex>
-            <Text color="whiteAlpha.900">Skilled Workers</Text>
+            <Text color="whiteAlpha.900">Core Personnel</Text>
           </Flex>
         </Flex>
       </Flex>

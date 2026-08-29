@@ -418,7 +418,7 @@ export default function ContactSection() {
               bg="#25D366"
               color="white"
               fontSize="sm"
-              _hover={{ filter: "brightness(0.92)" }}
+              _hover={{ "@media (hover: hover)": { filter: "brightness(0.92)" } }}
             >
               <Icon as={FaWhatsapp} boxSize={5} mr={2} />
               Send via WhatsApp
@@ -430,7 +430,7 @@ export default function ContactSection() {
               borderColor="primary.500"
               color="primary.500"
               fontSize="sm"
-              _hover={{ bg: "primary.500", color: "white" }}
+              _hover={{ "@media (hover: hover)": { bg: "primary.500", color: "white" } }}
               onClick={() => submit("email")}
             >
               <Icon as={FaEnvelope} boxSize={4} mr={2} />

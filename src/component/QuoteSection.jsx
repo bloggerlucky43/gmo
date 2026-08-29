@@ -281,7 +281,7 @@ export default function QuoteSection({ bg = "gray.50", showHeading = true }) {
                 bg="#25D366"
                 color="white"
                 fontSize="sm"
-                _hover={{ filter: "brightness(0.92)" }}
+                _hover={{ "@media (hover: hover)": { filter: "brightness(0.92)" } }}
                 onClick={() => submit("whatsapp")}
               >
                 <Icon as={FaWhatsapp} boxSize={5} mr={2} />
@@ -294,7 +294,7 @@ export default function QuoteSection({ bg = "gray.50", showHeading = true }) {
                 borderColor="primary.500"
                 color="primary.500"
                 fontSize="sm"
-                _hover={{ bg: "primary.500", color: "white" }}
+                _hover={{ "@media (hover: hover)": { bg: "primary.500", color: "white" } }}
                 onClick={() => submit("email")}
               >
                 <Icon as={FaEnvelope} boxSize={4} mr={2} />

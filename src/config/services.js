@@ -27,7 +27,6 @@ export const SERVICES = [
   { name: "Adhoc Industrial Services", documented: true },
   { name: "Landscaping & Site Preparation", documented: true },
   { name: "General Contracting Services", documented: true },
-  { name: "Supply of Skilled & Unskilled Labour", documented: true },
   { name: "Pond & Lake Management Specialists", documented: true },
   { name: "Tree Planting & Maintenance", documented: true },
   { name: "Industrial Equipment Rental", documented: false },

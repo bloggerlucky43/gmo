@@ -15,7 +15,6 @@ const CAPABILITIES = [
   "Rehabilitation of Mining Areas",
   "Vegetation Control & Tree Planting",
   "Landscaping & Site Preparation",
-  "Skilled & Unskilled Labour Supply",
   "Pond & Lake Management",
   "General Contracting Services",
 ];

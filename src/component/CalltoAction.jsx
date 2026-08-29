@@ -54,7 +54,7 @@ export default function CallToAction() {
           color="white"
           mb={6}
         >
-          Our team is ready to provide fast, skilled labour and equipment when
+          Our team is ready to provide fast, reliable support and equipment when
           you need it most.
         </Text>
         <Button

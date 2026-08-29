@@ -11,7 +11,7 @@ const Careers = () => {
       <PageHero
         eyebrow="Work with us"
         title="Build your career on site"
-        subtitle="We place skilled tradespeople and operators on industrial, mining and construction projects. If you have the trade and the paperwork, send us your details."
+        subtitle="Join our team at Godfrey M. Oshieku Technical Nigeria LTD. We are always looking for qualified and dedicated professionals to work on our industrial, mechanical and civil projects."
       />
       <WorkWithUsSection showHeading={false} />
       <Footer />

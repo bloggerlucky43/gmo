@@ -24,7 +24,7 @@ const REASONS = [
   {
     src: about2,
     title: "Skilled and dedicated workforce",
-    desc: "Certified engineers, tradesmen and operatives who know industrial sites, and who are screened before they are deployed to yours.",
+    desc: "Certified engineers, tradesmen and operatives who know industrial sites and work directly on your project scopes.",
   },
   {
     src: about3,
@@ -44,7 +44,7 @@ const REASONS = [
   {
     src: about6,
     title: "Comprehensive solutions",
-    desc: "Electrical, mechanical, civil, labour supply and environmental work under one contract - one point of responsibility instead of five.",
+    desc: "Electrical, mechanical, civil, and environmental work under one contract - one point of responsibility instead of four.",
   },
 ];
 

@@ -22,8 +22,8 @@ const slides = [
   },
   {
     src: eng,
-    title: "Need Skilled Labour or Equipment Fast?",
-    desc: "We connect you with trained professionals and modern equipment to keep your operations running smoothly. Whether you need short-term staffing, specialized tools, or large-scale equipment, we deliver dependable solutions exactly when you need them.",
+    title: "Looking for Reliable Equipment Fast?",
+    desc: "We supply modern tools and equipment to keep your operations running smoothly. Whether you need specialized welding gear, breaking tools, or site maintenance equipment, we deliver dependable solutions exactly when you need them.",
     cta: "Contact Us",
   },
   {

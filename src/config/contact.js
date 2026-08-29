@@ -14,14 +14,21 @@ export const FOUNDED_YEAR = 2005;
 export const INDUSTRY =
   "General Contracting, Engineering & Industrial Services";
 
+/* Permanent staff, as stated in both versions of the profile document. The site
+ * had been publishing "50+ Skilled Workers", which folded the contract labour
+ * the company mobilises per job into the headcount. Confirmed with the owner:
+ * publish the core team as the figure, and name the mobilised labour separately
+ * rather than inflating one number to cover both. */
+export const TEAM_SIZE = 17;
+
 export const ADDRESS =
   "No 7, Ajegunle Ewekoro, Lagos/Abeokuta Road, Ogun State";
 
-/* TODO(owner): the profile document gives the second line as 08035325022, but
- * the site has been publishing 08032930304. They differ from the 5th digit on,
- * so this is not a typo in one place - one of the two is the wrong number.
- * Confirm which is current and delete the other. */
-export const PHONES = ["08165682612", "08032930304"];
+/* Confirmed with the owner: 08035325022 is the live second line. Both versions
+ * of the profile document give it - including the Aug 2026 revision the founder
+ * edited himself - whereas the 08032930304 the site had been publishing had no
+ * source in any document. */
+export const PHONES = ["08165682612", "08035325022"];
 export const EMAIL = "oshiektech4@gmail.com";
 
 /* The profile document claims "over 20 years of industry experience" against a
