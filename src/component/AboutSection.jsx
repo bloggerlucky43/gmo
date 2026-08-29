@@ -41,6 +41,7 @@ export default function AboutSection() {
             objectFit="cover"
             w="100%"
             h={{ base: "250px", md: "400px" }}
+            loading="lazy"
           />
         </Box>
 
