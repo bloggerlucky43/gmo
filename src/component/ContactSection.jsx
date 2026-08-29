@@ -411,7 +411,7 @@ export default function ContactSection() {
             </Field>
           </Flex>
 
-          <Flex direction={{ base: "column", sm: "row" }} gap={3} mt={6}>
+          <Flex direction={{ base: "column", sm: "row" }} gap={3} mt={{ base: 10, sm: 6 }}>
             <Button
               type="submit"
               flex="1"

@@ -274,7 +274,7 @@ export default function QuoteSection({ bg = "gray.50", showHeading = true }) {
               </Box>
             </SimpleGrid>
 
-            <Flex direction={{ base: "column", sm: "row" }} gap={3} mt={7}>
+            <Flex direction={{ base: "column", sm: "row" }} gap={3} mt={{ base: 10, sm: 7 }}>
               <Button
                 flex="1"
                 size="lg"
