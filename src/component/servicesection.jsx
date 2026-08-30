@@ -18,7 +18,7 @@ import ServiceCard from "./servicecard";
 import { SERVICES } from "../config/services";
 import eng from "../assets/eng.webp";
 import enginner from "../assets/enginnerimage.webp";
-import building from "../assets/building.webp";
+import civil from "../assets/civil.webp";
 import clothing from "../assets/clothing.webp";
 import photo from "../assets/photo.webp";
 import heavy from "../assets/heavy.webp";
@@ -47,7 +47,7 @@ const HEADLINE_SERVICES = [
     desc: "Fabrication, fitting and mechanical installation work for plant and process equipment, carried out to specification on site or in the yard.",
   },
   {
-    src: building,
+    src: civil,
     title: "Civil Engineering Works",
     desc: "Civil engineering jobs across industrial and commercial sites, delivered as part of our general contracting capability.",
   },
@@ -89,6 +89,7 @@ const SERVICE_ICONS = {
   "Pond & Lake Management Specialists": FaWater,
   "Tree Planting & Maintenance": FaTree,
   "Industrial Equipment Rental": FaTools,
+  "Labour Recruitment & Supply": FaUsers,
 };
 
 const ALL_SERVICES = SERVICES.map((service) => ({

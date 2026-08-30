@@ -5,7 +5,7 @@ import SectionHeading from "./SectionHeading";
 
 /* Existing site photography stands in for real project shots. */
 import excavator from "../assets/excavator.webp";
-import building from "../assets/building.webp";
+import pond from "../assets/pond.webp";
 import heavy from "../assets/heavy.webp";
 import intmin from "../assets/intmin.webp";
 import interior from "../assets/interior.webp";
@@ -124,7 +124,7 @@ const PROJECTS = [
     duration: "12 months",
     crew: "9 operatives",
     outcome: "Grounds stable through wet season",
-    image: building,
+    image: pond,
     video: "",
     gallery: 0,
   },

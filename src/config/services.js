@@ -4,10 +4,11 @@
  * The first twelve entries are the "Our Services" list from the company profile
  * document in src/assets, in the document's own order.
  *
- * Equipment rental is the one entry not in that document. It is kept on the
- * owner's instruction - the company does hire plant out, and the site has a
- * whole /equipment page for it, so the document's list is incomplete rather
- * than the site being wrong. `documented: false` records that distinction.
+ * Equipment rental and labour recruitment are the two entries not in that
+ * document. Both are kept on the owner's instruction - the company does hire
+ * plant out (the site has a whole /equipment page for it) and does supply
+ * labour, so the document's list is incomplete rather than the site being
+ * wrong. `documented: false` records that distinction.
  *
  * Removed on the owner's instruction, having had no backing in the document:
  * "Industrial Cleaning Services" and "Water Treatment & Sanitation".
@@ -30,6 +31,7 @@ export const SERVICES = [
   { name: "Pond & Lake Management Specialists", documented: true },
   { name: "Tree Planting & Maintenance", documented: true },
   { name: "Industrial Equipment Rental", documented: false },
+  { name: "Labour Recruitment & Supply", documented: false },
 ];
 
 export const SERVICE_NAMES = SERVICES.map((service) => service.name);
