@@ -3,14 +3,15 @@ import { FaPlay, FaClock, FaHardHat, FaArrowRight, FaImages } from "react-icons/
 import { useNavigate } from "react-router-dom";
 import SectionHeading from "./SectionHeading";
 
-/* Existing site photography stands in for real project shots. */
+/* Existing site photography stands in for real project shots on entries 2-7. */
 import excavator from "../assets/excavator.webp";
 import pond from "../assets/pond.webp";
 import heavy from "../assets/heavy.webp";
 import intmin from "../assets/intmin.webp";
 import interior from "../assets/interior.webp";
 import warehouse from "../assets/warehouse.webp";
-import eng from "../assets/eng.webp";
+/* Real client photography - see the caveat on entry 1's `image` below. */
+import cementSilos from "../assets/site/cement-silos.webp";
 
 /*  ============================================================
  *  ONE REAL ENTRY, FIVE PLACEHOLDERS
@@ -27,8 +28,9 @@ import eng from "../assets/eng.webp";
  *
  *  TODO(content): replace entries 2-6 with real completed projects.
  *
- *  `image`  - currently reuses existing site photography as a stand-in.
- *             Swap for a real photo of the job.
+ *  `image`  - entries 2-7 reuse existing site photography as a stand-in.
+ *             Swap for a real photo of the job. Entry 1 now carries a real
+ *             cement-plant photograph, with the caveat noted on it below.
  *  `video`  - leave "" and no play button renders. Paste a YouTube/Vimeo
  *             link (or an uploaded file URL) and the play overlay appears
  *             automatically.
@@ -46,7 +48,12 @@ const PROJECTS = [
     duration: "Multi-scope contract",
     crew: "Shutdown, audit & vegetation teams",
     outcome: "Delivered on time, every scope",
-    image: eng,
+    /* TODO(owner): real client photography of cement-plant work, but it is
+     * GENERIC plant photography - it is not verified as having been taken on
+     * this contract. Because this card names the client, a photo on it reads as
+     * being from that job. If that inference is wrong, either confirm the
+     * provenance with the owner or point this back at a stand-in. */
+    image: cementSilos,
     video: "",
     gallery: 0,
   },

@@ -1,5 +1,5 @@
 import { Box, Flex, Text, Button } from "@chakra-ui/react";
-import bgImage from "../assets/eng.webp";
+import bgImage from "../assets/site/plant-road-conveyors.webp";
 import { useNavigate } from "react-router-dom";
 
 export default function MidPageCta() {

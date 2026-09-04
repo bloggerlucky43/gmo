@@ -18,17 +18,25 @@ import ServiceCard from "./servicecard";
 import { SERVICES } from "../config/services";
 import eng from "../assets/eng.webp";
 import enginner from "../assets/enginnerimage.webp";
-import civil from "../assets/civil.webp";
 import clothing from "../assets/clothing.webp";
 import photo from "../assets/photo.webp";
 import heavy from "../assets/heavy.webp";
 import excavator from "../assets/excavator.webp";
+/* Real client photography, cement plant in Ogun State. No client is named on
+ * these - see OnSiteGallery.jsx for the same discipline applied to captions. */
+import kerbPaintingCrew from "../assets/site/kerb-painting-crew.webp";
+import treeSeedlingNursery from "../assets/site/tree-seedling-nursery.webp";
 
 /*  The eight photo cards are the headline services, all of them named in the
  *  company profile document (src/assets). The capability list underneath carries
- *  the full set, because several real services - pond and lake management, tree
- *  planting, adhoc industrial work - have no photography to sit behind a card,
- *  and leaving them off the site entirely was the bigger problem.
+ *  the full set, because several real services - pond and lake management, adhoc
+ *  industrial work - still have no photography to sit behind a card, and leaving
+ *  them off the site entirely was the bigger problem.
+ *
+ *  Two cards now carry the client's own site photography from src/assets/site/
+ *  instead of stock stand-ins: Civil Engineering Works, and Vegetation Control &
+ *  Tree Planting. The second was a real documented capability with no photograph
+ *  to put behind it until those pictures arrived.
  *
  *  The list itself lives in src/config/services.js, which also feeds the quote
  *  and contact form dropdowns. Services flagged `documented: false` there are on
@@ -47,7 +55,7 @@ const HEADLINE_SERVICES = [
     desc: "Fabrication, fitting and mechanical installation work for plant and process equipment, carried out to specification on site or in the yard.",
   },
   {
-    src: civil,
+    src: kerbPaintingCrew,
     title: "Civil Engineering Works",
     desc: "Civil engineering jobs across industrial and commercial sites, delivered as part of our general contracting capability.",
   },
@@ -60,6 +68,11 @@ const HEADLINE_SERVICES = [
     src: photo,
     title: "Mining Area Rehabilitation",
     desc: "Rehabilitation and vegetation control across active and closed mining areas, keeping sites safe, accessible and compliant.",
+  },
+  {
+    src: treeSeedlingNursery,
+    title: "Vegetation Control & Tree Planting",
+    desc: "Vegetation control across plant and mining ground, with tree seedlings raised on site for replanting and maintained after the crews have gone.",
   },
   {
     src: heavy,

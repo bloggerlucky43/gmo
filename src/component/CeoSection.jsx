@@ -17,7 +17,7 @@ import {
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import logoMark from "../assets/gmologobg.png";
-import ceoPhoto from "../assets/ceo/ceo-portrait.webp";
+import ceoPhoto from "../assets/ceo/ceo-portrait-2026.webp";
 import {
   COMPANY_NAME,
   LEGAL_NAME,
@@ -50,20 +50,30 @@ import "./stylings/CeoSection.css";
  *  it is the one error on the page nobody will forgive.
  *
  *  The portrait is the founder's own photograph, cropped from
- *  src/assets/ceo/. Two are prepared:
+ *  src/assets/ceo/. Three are prepared:
  *
+ *    ceo-portrait-2026.webp   Used, on the client's instruction. Seated
+ *                             head-and-torso indoors. Cropped from a WhatsApp
+ *                             status screenshot, so the phone status bar, the
+ *                             "My status" header, the status caption, the view
+ *                             counter and the nav bar have all been cut away in
+ *                             pixels rather than hidden with CSS. If you ever
+ *                             re-crop from the original in src/pictures/ceonew/,
+ *                             check all four edges again. 604x687 - the
+ *                             smallest source of the three. Note he is wearing
+ *                             a face mask pulled down to his chin.
  *    ceo-portrait.webp        on site in full PPE, cement plant behind him.
- *                             Used. It is the only one that shows the work,
- *                             and it lines up with the LafargeHolcim record
- *                             cited in the letter.
- *    ceo-portrait-posed.webp  posed head-and-torso against rock. Swap the
- *                             import if a conventional portrait is wanted.
+ *                             The only one that shows the work, and the only one
+ *                             that lines up with the LafargeHolcim record cited
+ *                             in the letter. Point the import back here if a
+ *                             work portrait is wanted again.
+ *    ceo-portrait-posed.webp  posed head-and-torso against rock.
  *
- *  Both are cropped off phone-camera originals, so they top out around 650px
- *  wide - fine at the size rendered here, but do not scale the panel up much
- *  without a better source. If a proper studio portrait is ever taken, drop it
- *  in and point the import at it; the layout also still handles photo: null by
- *  falling back to a designed monogram panel.
+ *  All three are cropped off phone-camera originals, so they top out around
+ *  650px wide - fine at the size rendered here, but do not scale the panel up
+ *  much without a better source. If a proper studio portrait is ever taken, drop
+ *  it in and point the import at it; the layout also still handles photo: null
+ *  by falling back to a designed monogram panel.
  *  ============================================================ */
 
 const CEO = {
@@ -72,8 +82,9 @@ const CEO = {
   role: "Founder & Chief Executive Officer",
   photo: ceoPhoto,
   // Cover-crops on a box whose aspect changes with the viewport, so bias the
-  // framing upward - his face sits in the top third of the crop.
-  photoPosition: "center 22%",
+  // framing upward - his face sits about 28% down this crop, and the bottom of
+  // the panel is taken by the scrim and, at lg, the credential card.
+  photoPosition: "center 25%",
   tenureValue: yearsInIndustryLabel(),
   tenureLabel: "Years in industry",
   lead: `${SLOGAN} is not a line we picked for a brochure. It is what a contractor working out of Ewekoro has had to do since 2005 - with the work, with the standard, and with what people assume we are capable of.`,

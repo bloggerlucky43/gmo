@@ -10,6 +10,7 @@ import MidPageCta from "../component/MidPageCta";
 import CeoSection from "../component/CeoSection";
 import IndustriesSection from "../component/IndustriesSection";
 import ProjectsSection from "../component/ProjectsSection";
+import OnSiteGallery from "../component/OnSiteGallery";
 import EquipmentSection from "../component/EquipmentSection";
 import AwardsSection from "../component/AwardsSection";
 import QuoteSection from "../component/QuoteSection";
@@ -30,6 +31,9 @@ const Landing = () => {
         <ServicesSection />
         {/* Previews only - each links through to its own full page. */}
         <ProjectsSection limit={3} showViewAll bg="gray.50" />
+        {/* Real photography, straight after the project cards that are still
+            standing in for it. Default white against the gray.50 above. */}
+        <OnSiteGallery />
         <MidPageCta />
         <EquipmentSection limit={2} showViewAll />
         {/* White here to keep the alternation - EquipmentSection above and
