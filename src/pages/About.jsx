@@ -6,6 +6,7 @@ import ChooseUs from "../component/ChooseUs";
 import AboutComponent from "../component/AboutComponent";
 import CallToAction from "../component/CalltoAction";
 import CeoSection from "../component/CeoSection";
+import FounderSection from "../component/FounderSection";
 import MissionVision from "../component/MissionVision";
 const About = () => {
   return (
@@ -16,6 +17,8 @@ const About = () => {
 
         <AboutSection />
         <MissionVision bg="gray.50" />
+        {/* Founder before the MD: the company's origin, then who runs it now. */}
+        <FounderSection />
         <CeoSection />
         <CallToAction />
         <ChooseUs />

@@ -8,6 +8,7 @@ import Footer from "../component/Footer";
 import AboutSection from "../component/AboutSection";
 import MidPageCta from "../component/MidPageCta";
 import CeoSection from "../component/CeoSection";
+import FounderSection from "../component/FounderSection";
 import IndustriesSection from "../component/IndustriesSection";
 import ProjectsSection from "../component/ProjectsSection";
 import OnSiteGallery from "../component/OnSiteGallery";
@@ -24,6 +25,9 @@ const Landing = () => {
         <Carousel />
         <AboutSection />
         <MissionVision bg="gray.50" />
+        {/* Founder before the MD: the company's origin, then who runs it now.
+            The dark memorial band also breaks up the light sections either side. */}
+        <FounderSection />
         <CeoSection />
         {/* Sectors early on, so a visitor can spot their own industry fast. */}
         <IndustriesSection />

@@ -28,8 +28,27 @@ import SectionHeading from "./SectionHeading";
 import "./stylings/CeoSection.css";
 
 /*  ============================================================
- *  NEEDS THE CEO'S SIGN-OFF BEFORE THIS GOES LIVE
+ *  NEEDS THE MANAGING DIRECTOR'S SIGN-OFF BEFORE THIS GOES LIVE
  *  ============================================================
+ *  CORRECTED 2026-09-05: this portrait is the MANAGING DIRECTOR, not the
+ *  founder. The founder is the late Mr. Godfrey Momodu Oshieku - he now has
+ *  his own section, FounderSection.jsx, and the "Founder" label, the
+ *  founder's-desk heading and the "built by an operator" framing have been
+ *  moved there. Do not re-attach the word "founder" to this section.
+ *
+ *  THE TWO NAMES DIFFER BY ONE WORD. Confirmed with the owner:
+ *
+ *    Godfrey MOMODU Oshieku  - the late founder      (FounderSection.jsx)
+ *    Godfrey MOSES  Oshieku  - the Managing Director  (this file)
+ *
+ *  Both men share the first and last name, so "Godfrey M. Oshieku" is
+ *  ambiguous and must not be used for either on a page where both appear - the
+ *  middle name is the only thing telling them apart. How the two are related
+ *  was not stated and is therefore not published. The registered
+ *  company name in src/config/contact.js keeps its "Godfrey M. Oshieku"
+ *  abbreviation because that is how it reads on the CAC certificate; do not
+ *  "fix" that one to match.
+ *
  *  TODO(content): every factual claim in the letter below is taken from the
  *  company profile document in src/assets - the 2005 founding date, the
  *  service list, the "Breaking Limits" vision, the lean core team, and the
@@ -39,17 +58,16 @@ import "./stylings/CeoSection.css";
  *  one, and no numbers the company does not already publish.
  *
  *  The VOICE, though, is drafted - these are first-person words put in the
- *  mouth of a named, real person. Mr. Oshieku needs to read and approve them
- *  (ideally in writing) before publish, and the LafargeHolcim mention should
- *  be checked against whatever the contract says about using their name in
- *  marketing.
+ *  mouth of a real person. The Managing Director needs to read and approve
+ *  them (ideally in writing) before publish, and the LafargeHolcim mention
+ *  should be checked against whatever the contract says about using their name
+ *  in marketing.
  *
- *  TODO(owner): the profile document spells the surname "Oshieku" (which the
- *  oshiektech4@ address agrees with); this component had been publishing
- *  "Osieku", with no h. Confirm the spelling of his own name before publish -
- *  it is the one error on the page nobody will forgive.
+ *  Also corrected 2026-09-05: the letter opened "I registered [the company]",
+ *  which was only ever true of the founder. It now reads as the MD writing
+ *  about the company he runs, not the man who founded it.
  *
- *  The portrait is the founder's own photograph, cropped from
+ *  The portrait is the Managing Director's own photograph, cropped from
  *  src/assets/ceo/. Three are prepared:
  *
  *    ceo-portrait-2026.webp   Used, on the client's instruction. Seated
@@ -78,8 +96,11 @@ import "./stylings/CeoSection.css";
 
 const CEO = {
   honorific: "Mr.",
-  name: "Godfrey M. Oshieku",
-  role: "Founder & Chief Executive Officer",
+  /* Middle name in full, never "M." - see the note above on the two Godfrey
+   * Oshiekus. The founder is the Momodu; this is the Moses. */
+  name: "Godfrey Moses Oshieku",
+  showName: true,
+  role: "Managing Director",
   photo: ceoPhoto,
   // Cover-crops on a box whose aspect changes with the viewport, so bias the
   // framing upward - his face sits about 28% down this crop, and the bottom of
@@ -89,7 +110,7 @@ const CEO = {
   tenureLabel: "Years in industry",
   lead: `${SLOGAN} is not a line we picked for a brochure. It is what a contractor working out of Ewekoro has had to do since 2005 - with the work, with the standard, and with what people assume we are capable of.`,
   letter: [
-    `I registered ${LEGAL_NAME} to do the technical work that keeps plants running: electrical and mechanical installation, civil jobs, shutdown support, vegetation control and the rehabilitation of mining ground. ${yearsInIndustryLabel()} years on, the scope has widened but the test has not changed. Does the plant come back up on schedule, and does it come back up safely?`,
+    `${LEGAL_NAME} exists to do the technical work that keeps plants running: electrical and mechanical installation, civil jobs, shutdown support, vegetation control and the rehabilitation of mining ground. ${yearsInIndustryLabel()} years on from our founding, the scope has widened but the test has not changed. Does the plant come back up on schedule, and does it come back up safely?`,
     "Our shutdown services, periodic stock audit and vegetation control for LafargeHolcim Africa Plc is the record I would point a new client to. Not because it was the largest contract, but because shutdown work is judged on the clock. The plant is down and losing money from the hour you start, so you are given a fixed window to work in - and the only question at the end of it is whether production is running again.",
     "We are a lean core team, backed by a dedicated workforce we mobilise to the size of the job. That is deliberate. It means the people on your site answer to us, and it means when you call this company you are never far from me.",
   ],
@@ -128,11 +149,17 @@ const initials = (value) =>
 export default function CeoSection() {
   const navigate = useNavigate();
 
+  /* One switch for the whole section: with no confirmed name, every place that
+   * would have printed it falls back to the role instead of rendering "Mr. "
+   * with nothing after it. */
+  const named = CEO.showName && Boolean(CEO.name);
+  const displayName = named ? `${CEO.honorific} ${CEO.name}` : CEO.role;
+
   return (
     <Box
       as="section"
       id="leadership"
-      aria-label="Message from the founder"
+      aria-label="Message from the Managing Director"
       w="100%"
       position="relative"
       overflow="hidden"
@@ -158,8 +185,8 @@ export default function CeoSection() {
       >
         <SectionHeading
           eyebrow="Leadership"
-          title="From the founder's desk"
-          subtitle={`${COMPANY_NAME} was built by an operator, not an office. This is the standard we hold ourselves to, in his own words.`}
+          title="From the Managing Director's desk"
+          subtitle={`${COMPANY_NAME} is run by operators, not an office. This is the standard we hold ourselves to, in his own words.`}
         />
 
         {/* ---------- Portrait + letter ---------- */}
@@ -211,7 +238,11 @@ export default function CeoSection() {
                 <>
                   <Image
                     src={CEO.photo}
-                    alt={`${CEO.honorific} ${CEO.name}, ${CEO.role} of ${COMPANY_NAME}`}
+                    alt={
+                      named
+                        ? `${displayName}, ${CEO.role} of ${COMPANY_NAME}`
+                        : `The ${CEO.role} of ${COMPANY_NAME}`
+                    }
                     w="100%"
                     h="100%"
                     objectFit="cover"
@@ -264,7 +295,9 @@ export default function CeoSection() {
                       lineHeight="1"
                       letterSpacing="tight"
                     >
-                      {initials(CEO.name)}
+                      {/* No confirmed name to draw initials from, so the
+                          monogram falls back to the company's. */}
+                      {initials(named ? CEO.name : COMPANY_NAME)}
                     </Text>
                     <Box h="2px" w="48px" bg="orange.400" my={5} />
                     <Text
@@ -275,7 +308,7 @@ export default function CeoSection() {
                       color="whiteAlpha.700"
                       textAlign="center"
                     >
-                      {COMPANY_NAME} &middot; Founder
+                      {COMPANY_NAME} &middot; {CEO.role}
                     </Text>
                   </Flex>
                 </>
@@ -338,7 +371,9 @@ export default function CeoSection() {
                   color="primary.500"
                   lineHeight="1.3"
                 >
-                  {CEO.honorific} {CEO.name}
+                  {/* Name when confirmed, otherwise the role carries the card
+                      and the company name takes the line beneath it. */}
+                  {named ? displayName : CEO.role}
                 </Text>
                 <Text
                   fontSize="10px"
@@ -348,7 +383,7 @@ export default function CeoSection() {
                   color="gray.500"
                   mt={1}
                 >
-                  {CEO.role}
+                  {named ? CEO.role : COMPANY_NAME}
                 </Text>
               </Box>
               <Box
@@ -432,16 +467,20 @@ export default function CeoSection() {
               gap={6}
             >
               <Box>
-                <Text
-                  className="ceo-signature"
-                  aria-hidden="true"
-                  fontSize={{ base: "2xl", md: "3xl" }}
-                  color="primary.500"
-                  lineHeight="1.1"
-                  mb={2}
-                >
-                  {CEO.name}
-                </Text>
+                {/* The handwritten signature only makes sense with a name to
+                    write. Unnamed, the rule alone closes the letter. */}
+                {named && (
+                  <Text
+                    className="ceo-signature"
+                    aria-hidden="true"
+                    fontSize={{ base: "2xl", md: "3xl" }}
+                    color="primary.500"
+                    lineHeight="1.1"
+                    mb={2}
+                  >
+                    {CEO.name}
+                  </Text>
+                )}
                 <Box h="1px" w="120px" bg="orange.500" mb={3} />
                 <Text
                   as="cite"
@@ -451,10 +490,10 @@ export default function CeoSection() {
                   fontSize="sm"
                   color="gray.900"
                 >
-                  {CEO.honorific} {CEO.name}
+                  {named ? displayName : CEO.role}
                 </Text>
                 <Text fontSize="xs" color="gray.600" mt={1}>
-                  {CEO.role}, {COMPANY_NAME}
+                  {named ? `${CEO.role}, ${COMPANY_NAME}` : COMPANY_NAME}
                 </Text>
               </Box>
 
